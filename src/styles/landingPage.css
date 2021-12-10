@@ -1,0 +1,23 @@
+* {
+  --landing-page-height: calc(100vh - var(--nav-bar-height));
+}
+
+.landing-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('/src/resources/DP-19264-000.jpg');
+  background-size: 2400px;
+  background-position: 0% 100%;
+  height: var(--landing-page-height);
+}
+
+@media screen and (max-width: 1500px) {
+  .landing-page {
+    background-size: 2200px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .landing-page {
+    background-size: 2000px;
+  }
+}
