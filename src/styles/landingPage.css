@@ -1,6 +1,54 @@
 * {
   --landing-page-height: calc(100vh - var(--nav-bar-height));
+  --main-container-width: 80vw;
+  --header-height: calc(var(--landing-page-height) / 3);
 }
+
+main {
+  height: var(--landing-page-height);
+  width: var(--main-container-width);
+
+  margin: auto;
+}
+
+/*=========================================*/
+/*LANDING PAGE HEADER STYLES*/
+/*=========================================*/
+header {
+  height: var(--header-height);
+  width: var(--main-container-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header h1 {
+  color: red;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 7rem;
+  font-weight: 100;
+}
+
+header div {
+  background-color: white;
+  height: 1px;
+  width: calc(var(--main-container-width) / 2);
+}
+header p {
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 0.3rem;
+}
+
+header p span {
+  font-family: 'Tangerine', cursive;
+  font-size: 2rem;
+  color: rgb(255, 179, 0);
+}
+/*=========================================*/
 
 .landing-page {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -19,5 +67,17 @@
 @media screen and (max-width: 1024px) {
   .landing-page {
     background-size: 2000px;
+  }
+
+  header div {
+    width: 371.41px;
+  }
+
+  header p {
+    width: 371.41px;
+    font-size: 18px;
+    letter-spacing: 0.3rem;
+    text-align: center;
+    line-height: 3rem;
   }
 }
