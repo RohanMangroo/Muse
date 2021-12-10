@@ -1,28 +1,10 @@
 * {
-  --landing-page-height: calc(100vh - var(--nav-bar-height));
-
   --main-container-height: calc(100vh - var(--nav-bar-height));
   --main-container-width: 80vw;
 
-  --header-height: calc(var(--main-container-height) * 1 / 3);
   --header-width: var(--main-container-width);
 
-  --login-section-height: calc(var(--main-container-height) * 1.5 / 3);
   --login-section-width: calc((var(--main-container-width) * 2 / 3));
-
-  --oauth-container-height: 150px;
-}
-
-/*=========================================*/
-/*LANDING PAGE MAIN SECTION STYLES*/
-/*=========================================*/
-.landing-page main {
-  height: var(--main-container-height);
-  width: var(--main-container-width);
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 /*=========================================*/
@@ -33,14 +15,25 @@
     url('/src/resources/DP-19264-000.jpg');
   background-size: 2400px;
   background-position: 0% 100%;
-  height: var(--landing-page-height);
+  height: 900px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
+/*=========================================*/
+/*LANDING PAGE MAIN SECTION STYLES*/
+/*=========================================*/
+.landing-page main {
+  width: var(--main-container-width);
+  margin: auto;
+  height: 800px;
+  align-self: center;
+}
 /*=========================================*/
 /*LANDING PAGE HEADER STYLES*/
 /*=========================================*/
 .landing-page header {
-  height: var(--header-height);
+  height: 300px;
   width: var(--header-width);
   display: flex;
   flex-direction: column;
@@ -55,7 +48,7 @@
   font-size: 5.5rem;
   font-weight: 100;
   text-align: center;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
 }
 
 .landing-page header div {
@@ -87,8 +80,8 @@
 
 /*OAuth Styles*/
 .landing-page main > section {
-  height: var(--login-section-height);
-  width: var(--login-section-width);
+  /* border: solid yellow; */
+  height: 350px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -97,7 +90,7 @@
 }
 
 .oauth-container {
-  height: var(--oauth-container-height);
+  height: 150px;
   width: var(--oauth-container-width);
   display: flex;
   flex-direction: column;
@@ -113,6 +106,7 @@
   color: white;
   font-size: 0.8rem;
 }
+
 /*The section that contains the OAuth image*/
 .oauth-item section:nth-child(1) {
   width: 75px;
@@ -157,35 +151,14 @@
 /*=========================================*/
 
 @media screen and (min-width: 1007px) {
-  .oauth-item,
-  .guest-login,
   .landing-page header div {
     width: 500px;
   }
 }
 
-/* @media screen and (max-width: 1024px) {
-  .landing-page header div {
-    width: 371.41px;
+@media screen and (min-height: 1024px) {
+  .landing-page {
+    height: 100vh;
+    /* display: flex; */
   }
-
-  
 }
-
-@media screen and (max-width: 768px) {
-  .oauth-item,
-  .guest-login,
-  .oauth-container,
-  .landing-page main > section {
-    width: 400px;
-  }
-} */
-
-/* @media screen and (max-width: 640px) {
-  .oauth-item,
-  .guest-login,
-  .oauth-container,
-  .landing-page main > section {
-    width: 300px;
-  }
-} */
