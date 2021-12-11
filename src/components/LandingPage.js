@@ -1,9 +1,10 @@
 import React from 'react';
-import '../styles/landingPage.css';
+import { Link } from 'react-router-dom';
 import OAuthLogIn from './OAuthLogIn';
 import GuestLogIn from './GuestLogIn';
 import googleImage from '../resources/Google__G__Logo.svg.png';
 import facebookImage from '../resources/Facebook-logo.png';
+import '../styles/landingPage.css';
 
 export default function LandingPage() {
   return (
@@ -22,7 +23,9 @@ export default function LandingPage() {
             <OAuthLogIn type="Facebook" image={facebookImage} />
           </div>
           <p>OR</p>
-          <GuestLogIn />
+          <Link to="/guest" style={{ textDecoration: 'none' }}>
+            <GuestLogIn />
+          </Link>
         </section>
       </main>
     </div>
