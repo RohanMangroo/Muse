@@ -15,7 +15,8 @@
     url('/src/resources/DP-19264-000.jpg');
   background-size: 2400px;
   background-position: 0% 100%;
-  height: 900px;
+  min-height: var(--main-container-height);
+  min-width: 375px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -25,38 +26,43 @@
 /*=========================================*/
 .landing-page main {
   width: var(--main-container-width);
+  min-width: 375px;
   margin: auto;
-  height: 800px;
-  align-self: center;
 }
 /*=========================================*/
 /*LANDING PAGE HEADER STYLES*/
 /*=========================================*/
 .landing-page header {
-  height: 300px;
+  min-height: 300px;
   width: var(--header-width);
+  min-width: 375px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin: auto;
 }
 
 .landing-page header h1 {
-  width: var(--header-width);
+  width: 300px;
   color: red;
   font-family: 'Libre Baskerville', serif;
   font-size: 5.5rem;
   font-weight: 100;
   text-align: center;
-  /* margin-top: 3rem; */
 }
 
 .landing-page header div {
   background-color: white;
   height: 1px;
-  width: 300px;
+  width: 500px;
 }
 
+@media screen and (max-width: 600px) {
+  .landing-page header div {
+    width: 300px;
+  }
+}
 .landing-page header p {
   width: var(--header-width);
   color: white;
@@ -145,20 +151,4 @@
   font-family: 'Roboto', sans-serif;
   text-align: center;
   font-size: 2rem;
-}
-/*=========================================*/
-/*MEDIA QUERIES*/
-/*=========================================*/
-
-@media screen and (min-width: 1007px) {
-  .landing-page header div {
-    width: 500px;
-  }
-}
-
-@media screen and (min-height: 1024px) {
-  .landing-page {
-    height: 100vh;
-    /* display: flex; */
-  }
 }

@@ -5,6 +5,7 @@
 nav {
   height: var(--nav-bar-height);
   width: 100%;
+  min-width: 375px;
   background-color: rgba(234, 27, 27, 0.85);
   display: flex;
   justify-content: space-between;
