@@ -142,7 +142,7 @@ form input {
 .right-section {
   height: var(--main-container-height);
   width: 75%;
-  /* overflow: auto; */
+  overflow: auto;
 }
 
 .grid-container {
@@ -158,12 +158,10 @@ form input {
 
 .grid-container > * {
   border: solid thin orange;
-  opacity: 0.9;
 }
 
 .grid-container > *:hover {
-  border: solid thin rgb(0, 255, 213);
-  opacity: 1;
+  border: solid thin red;
 }
 .grid-container figure:nth-child(1) {
   grid-column: 1 / 5;

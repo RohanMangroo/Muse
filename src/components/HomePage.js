@@ -61,6 +61,32 @@ function ArtworkInfo() {
             His younger brother Theo supported him financially; the two kept a
             long correspondence by letter.
           </p>
+          <p>
+            Born into an upper-middle-class family, Van Gogh drew as a child and
+            was serious, quiet, and thoughtful. As a young man, he worked as an
+            art dealer, often traveling, but became depressed after he was
+            transferred to London.
+          </p>
+          <p>
+            He turned to religion and spent time as a Protestant missionary in
+            southern Belgium. He drifted in ill health and solitude before
+            taking up painting in 1881, having moved back home with his parents.
+            His younger brother Theo supported him financially; the two kept a
+            long correspondence by letter.
+          </p>
+          <p>
+            Born into an upper-middle-class family, Van Gogh drew as a child and
+            was serious, quiet, and thoughtful. As a young man, he worked as an
+            art dealer, often traveling, but became depressed after he was
+            transferred to London.
+          </p>
+          <p>
+            He turned to religion and spent time as a Protestant missionary in
+            southern Belgium. He drifted in ill health and solitude before
+            taking up painting in 1881, having moved back home with his parents.
+            His younger brother Theo supported him financially; the two kept a
+            long correspondence by letter.
+          </p>
         </div>
       </SimpleBar>
     </div>
