@@ -10,10 +10,11 @@ export default function HomePage() {
     <div className="homepage-container">
       <div className="main-container">
         <section className="left-section">
-          <div className="search-form"></div>
           <div className="info-container">
             <ArtworkInfo />
+            <Buttons />
           </div>
+          <div className="search-form"></div>
         </section>
         <section className="right-section">
           <div className="grid-container">
@@ -25,6 +26,14 @@ export default function HomePage() {
   );
 }
 
+function Buttons() {
+  return (
+    <div className="buttons">
+      <button>Add to Favorites</button>
+      <button>Artist Wiki</button>
+    </div>
+  );
+}
 function ArtworkInfo() {
   return (
     <div className="artwork-info">
@@ -65,9 +74,6 @@ function ImageGallary() {
           </figure>
         );
       })}
-      {/* <figure key={uuidv4()}>
-        <img src={images[2]} alt="test"></img>
-      </figure> */}
     </>
   );
 }

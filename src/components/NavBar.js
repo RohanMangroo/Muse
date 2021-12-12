@@ -7,7 +7,7 @@ export default function NavBar() {
       <nav>
         <div className="nav-links">
           <ul>
-            <li>About</li>
+            <li></li>
           </ul>
         </div>
       </nav>
