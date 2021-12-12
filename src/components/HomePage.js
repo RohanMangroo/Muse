@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import '../styles/homePage.css';
 import images from '../resources/images';
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
+import mag from '../resources/Icon.svg';
 
 export default function HomePage() {
   return (
     <div className="homepage-container">
       <div className="main-container">
         <section className="left-section">
+          <div className="form">
+            <SearchBar />
+          </div>
           <div className="info-container">
             <ArtworkInfo />
             <Buttons />
           </div>
-          <div className="search-form"></div>
         </section>
         <section className="right-section">
           <div className="grid-container">
@@ -61,6 +64,24 @@ function ArtworkInfo() {
         </div>
       </SimpleBar>
     </div>
+  );
+}
+
+function SearchBar() {
+  const [search, setSearch] = useState('');
+  return (
+    <form>
+      <div className="search-form">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        ></input>
+        <span>
+          <img src={mag} alt="mag"></img>
+        </span>
+      </div>
+    </form>
   );
 }
 

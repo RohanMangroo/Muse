@@ -20,23 +20,55 @@
 .left-section {
   height: var(--main-container-height);
   width: 25%;
+  min-width: 500px;
   color: white;
   border-right: solid thin rgba(242, 225, 166, 0.5);
 }
 
-.search-form {
-  height: 50%;
+.form {
   width: 100%;
   /* background-color: peru; */
 }
 
-.info-container {
-  height: 50%;
+.search-form {
+  display: flex;
+}
+
+.search-form span {
+  height: 2.5rem;
+  width: 60px;
+  background-color: transparent;
+  /* border: solid thin red; */
+  background: rgba(242, 225, 166, 0.5);
+  text-align: center;
+  padding-top: 4px;
+}
+
+.search-form span img {
+  height: 2rem;
+  width: 2rem;
+  transform: scale(0.8);
+}
+
+.form form {
+  padding: 10px;
+}
+
+form input {
+  height: 2.5rem;
   width: 100%;
-  border-bottom: solid thin rgba(242, 225, 166, 0.5);
+  background: transparent;
+  border: solid thin rgba(242, 225, 166, 0.5);
+  color: white;
+}
+.info-container {
+  height: 60%;
+  width: 100%;
+  /* border-bottom: solid thin rgba(242, 225, 166, 0.5); */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  gap: 20px;
+  /* justify-content: space-around; */
 }
 
 .artwork-info {
@@ -126,9 +158,13 @@
 
 .grid-container > * {
   border: solid thin orange;
-  opacity: 0.5;
+  opacity: 0.9;
 }
 
+.grid-container > *:hover {
+  border: solid thin rgb(0, 255, 213);
+  opacity: 1;
+}
 .grid-container figure:nth-child(1) {
   grid-column: 1 / 5;
   grid-row: 1 / 5;
@@ -192,8 +228,8 @@
 .grid-container figure:nth-child(13) {
   grid-column: 3 / 5;
   grid-row: 5 / 7;
-  opacity: 1;
-  border: solid thin rgb(58, 128, 233);
+  /* opacity: 1; */
+  /* border: solid thin rgb(58, 128, 233); */
 }
 
 .grid-container figure:nth-child(14) {
