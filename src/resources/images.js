@@ -1,6 +1,3 @@
-import joan from '../resources/JoanOfArcLarge.jpeg';
-import main1 from '../resources/main-image-1.jpg';
-import main2 from '../resources/main-image.jpg';
 import oldGuitarist from '../resources/Old_guitarist_chicago.jpg';
 import pP1 from '../resources/PabloPicasso.jpg';
 import pP2 from '../resources/PabloPicasso2.jpg';
@@ -16,10 +13,7 @@ import to50 from '../resources/T05010_10.jpg';
 import vangogh from '../resources/Van-Gogh_Self-Portrait_1887.jpg';
 import women from '../resources/Woman_in_a_Green_Hat_(by_Paul_Cézanne,_1894-95).jpg';
 
-const images = {
-  joan,
-  main1,
-  main2,
+const images = [
   oldGuitarist,
   pP1,
   pP2,
@@ -34,5 +28,5 @@ const images = {
   to50,
   vangogh,
   women,
-};
+];
 export default images;
