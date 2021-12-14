@@ -4,14 +4,15 @@ import '../styles/navBar.css';
 import iconMenu from '../resources/Icon_menu.svg';
 import { updateLeftSection } from '../store/leftSectionReducer';
 
-function NavBar({ leftSection, updateLeftSection_ }) {
+function NavBar({ leftSection, updateLeftSection_, currentPage }) {
   function handleClick() {
     updateLeftSection_(!leftSection);
   }
+  const className = currentPage === 'landingPage' ? 'transparent' : '';
 
   return (
     <div>
-      <nav>
+      <nav className={className}>
         <div onClick={() => handleClick()}>
           <img src={iconMenu} alt="menu" className="search-menu-button"></img>
         </div>
@@ -25,9 +26,10 @@ function NavBar({ leftSection, updateLeftSection_ }) {
   );
 }
 
-const mapStateToProps = ({ leftSection }) => {
+const mapStateToProps = ({ leftSection, currentPage }) => {
   return {
     leftSection: leftSection.open,
+    currentPage: currentPage.currentPage,
   };
 };
 

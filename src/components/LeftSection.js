@@ -6,10 +6,10 @@ import mag from '../resources/Icon.svg';
 import '../styles/homepage-left.css';
 
 function LeftSection({ leftSection }) {
-  const leftMenu = leftSection ? 'close' : 'open';
-  const className = `left-section ${leftMenu}`;
+  const menu = leftSection ? 'left-section close' : 'left-section open';
+
   return (
-    <section className={className}>
+    <section className={menu}>
       <div className="search-bar-container">
         <SearchBar />
       </div>

@@ -1,12 +1,12 @@
 * {
-  --nav-bar-height: 1.5rem;
+  --nav-bar-height: 2rem;
 }
 
 nav {
   height: var(--nav-bar-height);
   width: 100%;
   /* min-width: 375px; */
-  background-color: #cb0b0b;
+  background-color: black;
   border-bottom: solid thin rgba(242, 225, 166, 0.5);
   display: flex;
   justify-content: space-between;
@@ -25,7 +25,13 @@ li {
   list-style: none;
   font-family: 'Libre Baskerville', serif;
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
+}
+
+.transparent {
+  background: transparent;
+  position: absolute;
+  border: none;
 }
 
 .search-menu-button {

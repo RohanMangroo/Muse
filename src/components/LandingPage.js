@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import OAuthLogIn from './OAuthLogIn';
 import GuestLogIn from './GuestLogIn';
 import googleImage from '../resources/Google__G__Logo.svg.png';
 import facebookImage from '../resources/Facebook-logo.png';
+import { updateCurrentPage } from '../store/currentPageReducer';
 import '../styles/landingPage.css';
 
-export default function LandingPage() {
+function LandingPage({ updateCurrentPage_ }) {
+  useEffect(() => {
+    updateCurrentPage_('landingPage');
+  });
+
   return (
     <div className="landing-page">
       <main>
@@ -31,3 +37,13 @@ export default function LandingPage() {
     </div>
   );
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateCurrentPage_: (page) => {
+      return dispatch(updateCurrentPage(page));
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(LandingPage);
