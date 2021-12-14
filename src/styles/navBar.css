@@ -6,10 +6,10 @@ nav {
   height: var(--nav-bar-height);
   width: 100%;
   /* min-width: 375px; */
-  background-color: black;
+  background-color: #cb0b0b;
   border-bottom: solid thin rgba(242, 225, 166, 0.5);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -23,7 +23,11 @@ ul {
 
 li {
   list-style: none;
-  font-family: 'Roboto', serif;
+  font-family: 'Libre Baskerville', serif;
   color: white;
   font-size: 1rem;
+}
+
+.search-menu-button {
+  display: none;
 }

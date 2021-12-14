@@ -1,0 +1,28 @@
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.right-section {
+  height: var(--main-container-height);
+  width: 75%;
+  overflow: auto;
+}
+
+.grid-container {
+  padding: 10px;
+  display: grid;
+  height: var(--main-container-height);
+  /* min-height: 800px; */
+  width: 100%;
+  gap: 10px;
+}
+
+.grid-container > * {
+  border: solid thin orange;
+}
+
+.grid-container > *:hover {
+  border: solid thin red;
+}
