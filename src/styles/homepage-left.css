@@ -1,11 +1,12 @@
 .left-section {
   height: var(--main-container-height);
-  width: 25%;
-  min-width: 300px;
   color: white;
   border-right: solid thin rgba(242, 225, 166, 0.5);
 }
 
+.left-section {
+  transition-duration: 1s;
+}
 /*=========================================*/
 /*Search Bar*/
 /*=========================================*/
