@@ -1,8 +1,9 @@
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { createSection } from '../utils';
 import '../styles/main-top.css';
 import '../styles/search.css';
 import '../styles/gallery.css';
+import '../styles/about.css';
 
 /*Main Component*/
 export default function Main() {
@@ -11,6 +12,7 @@ export default function Main() {
       <Top />
       <Search />
       <Gallery />
+      <About />
     </main>
   );
 }
@@ -51,7 +53,7 @@ function TopRight() {
     <section className="top-right flex-col">
       <div className="random-art flex-col">
         <header></header>
-        <section>{createSection()}</section>
+        <section>{createSection(9, 2, 'random-art-card flex-col')}</section>
       </div>
     </section>
   );
@@ -76,19 +78,9 @@ function Search() {
 }
 
 function Gallery() {
-  return <div className="gallery"></div>;
+  return <div className="gallery">{createSection(14, 0, 'grid-cell')}</div>;
 }
 
-/*Util Function*/
-function createSection() {
-  const array = [];
-  for (let i = 0; i < 9; i++) {
-    array.push(
-      <div className="flex-col" key={uuidv4()}>
-        <div></div>
-        <div></div>
-      </div>
-    );
-  }
-  return array;
+function About() {
+  return <div className="about"></div>;
 }
