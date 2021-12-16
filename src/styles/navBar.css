@@ -1,5 +1,4 @@
 * {
-  --main-color: #ea1b1b;
   --nav-container-height: 2rem;
 }
 
@@ -11,7 +10,7 @@
 
 nav {
   height: 100%;
-  width: 75%;
+  width: 1300px;
   margin: auto;
   display: flex;
   gap: 3px;

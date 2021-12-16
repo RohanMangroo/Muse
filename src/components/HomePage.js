@@ -41,40 +41,45 @@ function Hero() {
 
 function Main() {
   return (
-    <main className="main-container flex-row">
-      <section className="main-left flex-col">
-        <div className="featured-artist-container flex-col">
-          <header></header>
-          <div className="sub-container flex-row">
-            <div className="featured-artist flex-col">
-              <div className="featured-artist-img"></div>
-              <div className="featured-artist-description"></div>
+    <main className="main-container flex-col">
+      <div className="top flex-row">
+        <section className="main-left flex-col">
+          <div className="featured-artist-container flex-col">
+            <header></header>
+            <div className="sub-container flex-row">
+              <div className="featured-artist flex-col">
+                <div className="featured-artist-img"></div>
+                <div className="featured-artist-description"></div>
+              </div>
+              <div className="featured-artist flex-col">
+                <div className="featured-artist-img"></div>
+                <div className="featured-artist-description"></div>
+              </div>
             </div>
-            <div className="featured-artist flex-col">
-              <div className="featured-artist-img"></div>
-              <div className="featured-artist-description"></div>
-            </div>
+            <div className="unknown-section"></div>
           </div>
-        </div>
-        <div className="search">
-          <div className="result"></div>
-          <div className="related-item"></div>
-          <div className="related-item"></div>
-          <div className="related-item"></div>
-        </div>
-        <div className="discover-more"></div>
-      </section>
-      <section className="main-right flex-col">
-        <div className="random-art flex-col">
-          <header></header>
-          <section>{createSection()}</section>
-        </div>
-        <div className="search-selections flex-col">
-          <header></header>
-          <section></section>
-        </div>
-        <div className="video"></div>
-      </section>
+        </section>
+        <section className="main-right flex-col">
+          <div className="random-art flex-col">
+            <header></header>
+            <section>{createSection()}</section>
+          </div>
+        </section>
+      </div>
+      <div className="search flex-row">
+        <section className="results">
+          <div></div>
+          <div className="related-results">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </section>
+        <section className="search-form">
+          <div></div>
+        </section>
+      </div>
+      <div className="gallery"></div>
     </main>
   );
 }

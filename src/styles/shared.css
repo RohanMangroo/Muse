@@ -5,6 +5,17 @@
 * {
   margin: 0;
   box-sizing: border-box;
+
+  --main-color: rgb(234, 27, 27);
+  --main-color-accent: #ea9898;
+
+  --green-ish: rgb(131, 210, 210);
+  --green-ish-accent-1: rgb(124, 198, 198);
+  --green-ish-accent-2: rgb(102, 195, 195);
+  --green-ish-accent-3: rgb(118, 202, 202);
+
+  --blue-ish: rgb(183, 221, 244);
+  --blue-ish-accent: rgb(146, 201, 236);
 }
 
 .display-none {
