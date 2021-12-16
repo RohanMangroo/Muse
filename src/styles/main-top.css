@@ -22,30 +22,65 @@
 .featured-artist-container header {
   height: 75px;
   width: 100%;
-  background-color: var(--blue-ish);
+  background-color: rgb(248, 161, 46);
+}
+
+.featured-artist-container header h2 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 100;
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 0.9rem;
+  padding-left: 1rem;
+  padding-top: 5px;
 }
 
 .featured-artist-container .sub-container {
-  height: 70%;
+  height: 100%;
   width: 100%;
   gap: 5px;
+}
+
+.sub-container .featured-artist:nth-child(1) {
+  background-image: url('../resources/Moses_by_Michelangelo.jpg');
+  background-size: 500px;
+  background-position: center top;
+}
+
+.sub-container .featured-artist:nth-child(2) {
+  background-image: url('../resources/picasso.png');
+  background-size: 500px;
+  background-position: center;
 }
 
 .featured-artist {
   height: 100%;
   width: 50%;
+  justify-content: flex-end;
 }
 
 .featured-artist-img {
   height: 70%;
   width: 100%;
-  background-color: var(--blue-ish);
+  /* background-color: var(--blue-ish); */
 }
 
 .featured-artist-description {
-  height: 30%;
+  height: 20%;
   width: 100%;
-  background-color: var(--blue-ish-accent);
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: 'Roboto', sans-serif;
+  color: #f2e1a6;
+  padding: 10px;
+}
+
+.featured-artist-description h2 {
+  margin-bottom: 10px;
+}
+
+.featured-artist-description h3 {
+  color: lightgrey;
+  font-weight: 100;
 }
 
 .unknown-section {
@@ -73,7 +108,17 @@
 .random-art header {
   height: 75px;
   width: 100%;
-  background-color: var(--blue-ish);
+  background-color: rgb(248, 161, 46);
+}
+
+.random-art header h2 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 100;
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 0.9rem;
+  padding-left: 1rem;
+  padding-top: 5px;
 }
 
 .random-art section {
@@ -86,17 +131,25 @@
 }
 
 .random-art section div {
-  gap: 5px;
+  background-size: 300px;
+  background-position: center;
 }
 
 .random-art section div div:nth-child(1) {
   height: 80%;
   width: 100%;
-  background-color: rgb(183, 221, 244);
 }
 
 .random-art section div div:nth-child(2) {
   height: 20%;
   width: 100%;
-  background-color: rgb(183, 221, 244);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.random-art-card h3 {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: #f2e1a6;
+  padding: 10px;
 }
