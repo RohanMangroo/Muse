@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createSection } from '../utils';
 import { randomArtImages } from '../utils';
 import { v4 as uuidv4 } from 'uuid';
@@ -6,7 +6,7 @@ import '../styles/main-top.css';
 import '../styles/search.css';
 import '../styles/gallery.css';
 import '../styles/about.css';
-
+import magGlass from '../resources/Icon.svg';
 /*Main Component*/
 export default function Main() {
   return (
@@ -52,7 +52,6 @@ function TopLeft() {
             </div>
           </div>
         </div>
-        {/* <div className="unknown-section"></div> */}
       </div>
     </section>
   );
@@ -98,10 +97,34 @@ function Search() {
           <div></div>
         </div>
       </section>
-      <section className="search-form">
-        <div></div>
+      <section className="search-container flex-col">
+        <header className="center-item">
+          <h2>Search</h2>
+        </header>
+        <div className="flex-col">
+          <SearchBar />
+        </div>
       </section>
     </div>
+  );
+}
+
+function SearchBar() {
+  const [search, setSearch] = useState('');
+
+  return (
+    <form className="search-bar">
+      <div className="flex-row">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        ></input>
+        <span className="center-item">
+          <img src={magGlass} alt="mag"></img>
+        </span>
+      </div>
+    </form>
   );
 }
 

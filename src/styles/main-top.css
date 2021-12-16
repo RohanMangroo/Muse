@@ -1,6 +1,6 @@
 .top {
   height: 650px;
-  gap: 5px;
+  gap: 20px;
 }
 
 /*=========================================*/
@@ -81,12 +81,6 @@
 .featured-artist-description h3 {
   color: lightgrey;
   font-weight: 100;
-}
-
-.unknown-section {
-  height: 30%;
-  width: 100%;
-  background-color: var(--blue-ish);
 }
 
 /*=========================================*/

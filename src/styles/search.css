@@ -1,7 +1,7 @@
 .search {
   height: 650px;
   width: 1300px;
-  gap: 5px;
+  gap: 20px;
 }
 
 .results {
@@ -46,17 +46,50 @@
   background-color: var(--green-ish);
 }
 
-.search-form {
+/*=========================================*/
+/*SEARCH*/
+/*=========================================*/
+.search-container {
   height: 100%;
   width: 30%;
-  background-color: var(--green-ish);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  gap: 5px;
 }
 
-.search-form div {
-  grid-column: 1 / -1;
-  grid-row: 1 / 2;
+.search-container header {
+  height: 75px;
+  width: 100%;
+  background-color: var(--main-color-accent);
+}
+.search-container header h2 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 100;
+  color: white;
+  font-size: 3rem;
+  letter-spacing: 0.9rem;
+  padding-left: 1rem;
+  padding-top: 5px;
+}
+
+.search-container div {
+  height: 100%;
+  width: 100%;
+  background-color: var(--green-ish);
+}
+
+.search-bar div {
+  height: 50px;
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.search-bar input {
+  width: 85%;
+  border: none;
+  background-color: white;
+}
+
+.search-bar span {
+  width: 15%;
   background-color: var(--main-color-accent);
 }
