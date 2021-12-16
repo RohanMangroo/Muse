@@ -1,6 +1,7 @@
 import React from 'react';
 import { createSection } from '../utils';
 import { randomArtImages } from '../utils';
+import { v4 as uuidv4 } from 'uuid';
 import '../styles/main-top.css';
 import '../styles/search.css';
 import '../styles/gallery.css';
@@ -71,6 +72,7 @@ function TopRight() {
               <div
                 style={{ backgroundImage: `url(${obj.img})` }}
                 className="random-art-card flex-col"
+                key={uuidv4()}
               >
                 <div></div>
                 <div className="center-item">
