@@ -44,14 +44,14 @@
 .main-left {
   height: 100%;
   width: 60%;
-  gap: 10px;
+  /* gap: 5px; */
 }
 
 /*-------------------------------------*/
 .featured-artist-container {
   height: 100%;
   width: 100%;
-  gap: 10px;
+  gap: 5px;
 }
 
 .featured-artist-container header {
@@ -63,7 +63,7 @@
 .featured-artist-container .sub-container {
   height: 70%;
   width: 100%;
-  gap: 10px;
+  gap: 5px;
 }
 
 .featured-artist {
@@ -102,7 +102,7 @@
 .random-art {
   height: 100%;
   width: 100%;
-  gap: 10px;
+  gap: 5px;
 }
 
 .random-art header {
@@ -117,11 +117,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 10px;
+  gap: 5px;
 }
 
 .random-art section div {
-  gap: 10px;
+  gap: 5px;
 }
 
 .random-art section div div:nth-child(1) {
@@ -142,6 +142,7 @@
 .search {
   height: 800px;
   width: 1300px;
+  gap: 5px;
 }
 
 .results {
@@ -150,6 +151,7 @@
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
+  gap: 5px;
 }
 
 .results div:nth-child(1) {
@@ -158,10 +160,11 @@
   background-color: var(--green-ish);
 }
 
-.results div:nth-child(2) {
+.results > div:nth-child(2) {
   grid-column: 1 / 9;
   grid-row: 6 / 9;
   display: grid;
+  gap: 5px;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(3, 1fr);
 }
