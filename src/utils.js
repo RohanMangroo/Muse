@@ -22,6 +22,43 @@ export const randomArtImages = [
   { artist: 'Rembrandt', img: rem },
 ];
 
+/**Drop Down Menu Arrays */
+export const dropDownInfo = {
+  museum: ['All Museums', 'Metropolitan Museum of Art', 'museum', 'museum'],
+  type: ['Drawings', 'Paintings', 'Sculptures', 'Antiquity', 'Miscellaneous'],
+  genre: [
+    'The Renaissance',
+    'Rococo',
+    'Romanticism',
+    'Impressionism',
+    'Expressionism',
+    'Surrealism',
+    'Abstract',
+  ],
+  century: [
+    '1900',
+    '1800',
+    '1700',
+    '1600',
+    '1500',
+    '1400',
+    '1300',
+    '1200',
+    '1100',
+    'pre-1000',
+  ],
+  medium: [
+    'Oil',
+    'Acrylic',
+    'Watercolors',
+    'Charcoal',
+    'Pastels',
+    'Graphite',
+    'Ink',
+    'Marbel',
+  ],
+};
+
 /*Creates a section of Divs*/
 export function createSection(
   stop,

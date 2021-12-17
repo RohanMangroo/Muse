@@ -1,5 +1,5 @@
 * {
-  --nav-container-height: 2rem;
+  --nav-container-height: 50px;
 }
 
 .nav-container {
@@ -35,15 +35,15 @@ li div {
   color: white;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .logo {
   height: 100%;
-  width: 100px;
+  width: 175px;
   background-color: var(--main-color);
   font-family: 'Libre Baskerville', sans-serif;
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   color: white;
   padding-top: 2px;
 }
