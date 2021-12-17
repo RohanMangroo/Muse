@@ -127,6 +127,13 @@
 .random-art section div {
   background-size: 300px;
   background-position: center;
+  transition-duration: 500ms;
+}
+
+.random-art section div:hover {
+  background-size: 350px;
+  transition-duration: 500ms;
+  cursor: pointer;
 }
 
 .random-art section div div:nth-child(1) {

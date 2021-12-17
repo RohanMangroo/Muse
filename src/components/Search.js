@@ -4,16 +4,32 @@ import magGlass from '../resources/Icon.svg';
 import { dropDownInfo } from '../utils';
 import '../styles/search.css';
 import '../styles/search-results.css';
+import { resultImages } from '../utils';
 
 export default function Search() {
   return (
     <div className="search flex-row">
       <section className="results">
-        <div></div>
+        <div style={{ backgroundImage: `url(${resultImages[0].img})` }}>
+          <div className="results-info">
+            <h1>{resultImages[0].artist}</h1>
+            <h2>{resultImages[0].active}</h2>
+            <h2>{resultImages[0].nationality}</h2>
+          </div>
+        </div>
         <div className="related-results">
-          <div></div>
-          <div></div>
-          <div></div>
+          {resultImages.map((image, index) => {
+            return index > 0 ? (
+              <div
+                style={{ backgroundImage: `url(${image.img})` }}
+                key={uuidv4()}
+              >
+                <div></div>
+              </div>
+            ) : (
+              <React.Fragment key={uuidv4()}></React.Fragment>
+            );
+          })}
         </div>
       </section>
       <section className="search-container flex-col">
@@ -103,6 +119,7 @@ function SearchSubContainer() {
         name="medium"
         currentInput={currentInput}
       />
+      <div className="search-button center-item">Search</div>
     </div>
   );
 }

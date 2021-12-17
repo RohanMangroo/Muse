@@ -1,8 +1,10 @@
-import { createSection } from '../utils';
 import Search from './Search';
 import Top from './Top';
 import '../styles/gallery.css';
 import '../styles/about.css';
+import { v4 as uuidv4 } from 'uuid';
+
+import { gallery } from '../utils';
 
 /*Main Component*/
 export default function Main() {
@@ -17,7 +19,20 @@ export default function Main() {
 }
 
 function Gallery() {
-  return <div className="gallery">{createSection(14, 0, 'grid-cell')}</div>;
+  // return <div className="gallery">{createSection(14, 0, 'grid-cell')}</div>;
+  return (
+    <div className="gallery">
+      {gallery.map((obj) => {
+        return (
+          <div
+            className="grid-cell"
+            style={{ backgroundImage: `url(${obj.img})` }}
+            key={uuidv4()}
+          ></div>
+        );
+      })}
+    </div>
+  );
 }
 
 function About() {

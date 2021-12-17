@@ -8,7 +8,8 @@
 }
 
 .grid-cell {
-  background-color: rgb(214, 165, 165);
+  background-size: 500px;
+  background-position: center;
 }
 
 .gallery .grid-cell:nth-child(1) {
