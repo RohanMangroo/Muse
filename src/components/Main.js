@@ -21,16 +21,18 @@ export default function Main() {
 function Gallery() {
   // return <div className="gallery">{createSection(14, 0, 'grid-cell')}</div>;
   return (
-    <div className="gallery">
-      {gallery.map((obj) => {
-        return (
-          <div
-            className="grid-cell"
-            style={{ backgroundImage: `url(${obj.img})` }}
-            key={uuidv4()}
-          ></div>
-        );
-      })}
+    <div style={{ overflow: 'auto' }}>
+      <div className="gallery">
+        {gallery.map((obj) => {
+          return (
+            <div
+              className="grid-cell"
+              style={{ backgroundImage: `url(${obj.img})` }}
+              key={uuidv4()}
+            ></div>
+          );
+        })}
+      </div>
     </div>
   );
 }
