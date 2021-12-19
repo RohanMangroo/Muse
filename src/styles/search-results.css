@@ -29,6 +29,7 @@
 .results-info:hover {
   background: transparent;
   transition-duration: 500ms;
+  cursor: pointer;
 }
 .results-info h1 {
   font-weight: 100;
@@ -67,6 +68,7 @@
 .related-results > div div:hover {
   background-color: transparent;
   transition-duration: 500ms;
+  cursor: pointer;
 }
 
 .related-results div:nth-child(1) {

@@ -47,6 +47,7 @@ function TopRight() {
       <div className="random-art flex-col">
         <header className="center-item">
           <h2>Random Art</h2>
+          <button></button>
         </header>
         {/* <section>{createSection(9, 2, 'random-art-card flex-col')}</section> */}
         <section>
