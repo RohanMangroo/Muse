@@ -25,17 +25,12 @@
   padding-top: 5px;
 }
 
-.search-container .mueseum-dropdown {
-  height: 20%;
-  background-color: var(--green-ish);
-}
-
 .secondary-menus {
-  height: 80%;
+  height: 70%;
   width: 100%;
   background-color: var(--green-ish);
   margin-top: 15px;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .secondary-menus header {
@@ -43,16 +38,38 @@
   font-weight: 300;
   font-size: 1.3rem;
   color: white;
-  padding-left: 10px;
   background: var(--green-ish-accent-2);
   height: 40px;
   width: 100%;
   padding: 0;
 }
 
+.search-container .search-bar-container {
+  height: 30%;
+  background-color: var(--green-ish);
+  justify-content: space-evenly;
+}
+
+.search-bar-btn {
+  height: 30px;
+  width: 30%;
+  background: rgb(255, 76, 76);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.search-bar-btn:active {
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+  background: rgb(254, 115, 115);
+}
+
 .search-bar {
   width: 100%;
-  height: 15%;
+  height: 3rem;
 }
 
 /*Search Bar*/
@@ -80,7 +97,7 @@
 /*Drop Down Menu*/
 .custom-select {
   width: 100%;
-  height: 15%;
+  height: 3rem;
 }
 
 .custom-select > div {
@@ -126,13 +143,13 @@ select:disabled {
 }
 
 .search-button {
-  height: 40px;
-  width: 50%;
+  height: 30px;
+  width: 30%;
   background: rgb(255, 76, 76);
-  margin: 0 auto 10px auto;
+  margin: 0 auto 20px auto;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;

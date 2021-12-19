@@ -36,8 +36,9 @@ export default function Search() {
         <header className="center-item">
           <h2>Search</h2>
         </header>
-        <div className="mueseum-dropdown flex-col center-item">
-          <DropDownMenu info={dropDownInfo.museum} value="museum" />
+        <div className="search-bar-container flex-col center-item">
+          <SearchBar name="search" />
+          <div className="search-bar-btn center-item ">Search</div>
         </div>
         <SearchSubContainer />
       </section>
@@ -45,15 +46,13 @@ export default function Search() {
   );
 }
 
-function SearchBar({ name, currentInput }) {
+function SearchBar({ name }) {
   const [search, setSearch] = useState('');
-  const isDisabled = currentInput === name ? false : true;
 
   return (
     <form className="search-bar center-item">
       <div className="flex-row">
         <input
-          disabled={isDisabled}
           placeholder="Search by Artist Name"
           type="text"
           value={search}
@@ -91,6 +90,7 @@ function SearchSubContainer() {
   const [currentInput, setCurrentInput] = useState('search');
 
   function handleClick(e) {
+    console.log(currentInput);
     const name = e.target.name ? e.target.name : currentInput;
     setCurrentInput(name);
   }
@@ -98,7 +98,7 @@ function SearchSubContainer() {
   return (
     <div className="secondary-menus flex-col" onClick={(e) => handleClick(e)}>
       <header className="center-item">Search By</header>
-      <SearchBar name="search" currentInput={currentInput} />
+
       <DropDownMenu
         info={dropDownInfo.genre}
         name="genre"

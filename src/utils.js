@@ -170,6 +170,30 @@ export const dropDownInfo = {
   ],
 };
 
+export const featuredArtistDescriptions = {
+  artistOne: {
+    p1: `Michelangelo di Lodovico Buonarroti Simoni, known simply as
+    Michelangelo was an Italian sculptor, painter, architect and
+    poet of the High Renaissance born in the Republic of Florence,
+    whose work had a major influence on the development of Western
+    art, particularly in relation to the Renaissance notions of
+    humanism and naturalism. He is often considered a contender for
+    the title of the archetypal Renaissance man, along with his
+    rival and elder contemporary, Leonardo da Vinci.`,
+
+    p2: `Given the
+    sheer volume of surviving correspondence, sketches, and
+    reminiscences, Michelangelo is among best-documented artist of
+    the 16th century and several scholars have described
+    Michelangelo as the most accomplished artist of his era.`,
+  },
+
+  artistTwo: {
+    p1: `Pablo Ruiz Picasso was a Spanish painter, sculptor, printmaker, ceramicist and theatre designer who spent most of his adult life in France. Regarded as one of the most influential artists of the 20th century, he is known for co-founding the Cubist movement, the invention of constructed sculpture, the co-invention of collage, and for the wide variety of styles that he helped develop and explore.`,
+
+    p2: `Picasso demonstrated extraordinary artistic talent in his early years, painting in a naturalistic manner through his childhood and adolescence. During the first decade of the 20th century, his style changed as he experimented with different theories, techniques, and ideas`,
+  },
+};
 /*Creates a section of Divs*/
 export function createSection(
   stop,

@@ -1,4 +1,4 @@
-import { randomArtImages } from '../utils';
+import { randomArtImages, featuredArtistDescriptions } from '../utils';
 import { v4 as uuidv4 } from 'uuid';
 import '../styles/main-top.css';
 
@@ -24,6 +24,7 @@ function TopLeft() {
               <h2>Michelangelo</h2>
               <h3>1475-1564</h3>
               <h3>Italian</h3>
+              <p>{featuredArtistDescriptions.artistOne.p1}</p>
             </div>
           </div>
           <div className="featured-artist flex-col">
@@ -31,6 +32,7 @@ function TopLeft() {
               <h2>Pablo Picasso</h2>
               <h3>1881-1973</h3>
               <h3>Spanish</h3>
+              <p>{featuredArtistDescriptions.artistTwo.p1}</p>
             </div>
           </div>
         </div>
