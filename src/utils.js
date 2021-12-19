@@ -33,6 +33,14 @@ import image12 from './resources/galleryImages/image12.jpeg';
 import image13 from './resources/galleryImages/image13.jpeg';
 import image14 from './resources/galleryImages/image14.jpeg';
 
+/**Hero Images */
+import monet from './resources/heroImages/Claude-Monet.jpeg';
+import hockney from './resources/heroImages/hockney-top.jpg';
+import wave from './resources/heroImages/main-image.jpeg';
+import night from './resources/heroImages/night.jpg';
+import kankan from './resources/heroImages/Wassily.jpg';
+import paul from './resources/heroImages/PaulCezanne6.jpg';
+
 export const randomArtImages = [
   { artist: 'Raphael', img: raphel },
   { artist: 'Donatello', img: donatello },
@@ -170,6 +178,7 @@ export const dropDownInfo = {
   ],
 };
 
+export const heroImages = [paul, monet, hockney, wave, night, kankan];
 export const featuredArtistDescriptions = {
   artistOne: {
     p1: `Michelangelo di Lodovico Buonarroti Simoni, known simply as

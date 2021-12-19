@@ -1,19 +1,56 @@
-.hero-container figure {
-  min-height: 500px;
+.hero-container {
+  height: 500px;
   width: 1300px;
   margin: auto;
   margin-top: 10px;
-}
-.hero-image {
-  height: 500px;
-  width: 100%;
-  margin: auto;
-  object-fit: cover;
-  object-position: 100% 25%;
+  background-position: 100% 25%;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.hero-text-container {
-  position: absolute;
-  min-height: 500px;
-  width: 100%;
+.carousel-btn {
+  height: 70px;
+  width: 70px;
+  background-color: rgba(255, 0, 0, 0.4);
+  /* background-color: red; */
+  border-radius: 50%;
+}
+
+.btn-right {
+  margin-right: 10px;
+}
+
+.btn-left {
+  margin-left: 10px;
+}
+
+.pointer {
+  border: 10px solid transparent;
+}
+
+.carousel-left {
+  border-right-color: rgba(255, 255, 255, 0.5);
+  margin-right: 14px;
+}
+
+.carousel-right {
+  border-left-color: rgba(255, 255, 255, 0.5);
+  margin-left: 14px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+  transition-duration: 200ms;
+}
+
+.btn-left:hover .carousel-left {
+  border-right-color: white;
+  transition-duration: 200ms;
+}
+
+.btn-right:hover .carousel-right {
+  border-left-color: white;
+  transition-duration: 200ms;
 }
