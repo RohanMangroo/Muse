@@ -25,7 +25,7 @@ function NavBar({ currentPage }) {
   );
 }
 
-const mapStateToProps = ({ leftSection, currentPage }) => {
+const mapStateToProps = ({ currentPage }) => {
   return {
     currentPage: currentPage.currentPage,
   };

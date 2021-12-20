@@ -1,3 +1,5 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { randomArtImages, featuredArtistDescriptions } from '../utils';
 import { v4 as uuidv4 } from 'uuid';
 import '../styles/main-top.css';
@@ -12,6 +14,12 @@ export default function Top() {
 }
 
 function TopLeft() {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate('/singleArtist');
+  }
+
   return (
     <section className="top-left flex-col">
       <div className="featured-artist-container flex-col">
@@ -19,7 +27,10 @@ function TopLeft() {
           <h2>Featured Artists</h2>
         </header>
         <div className="sub-container flex-row">
-          <div className="featured-artist flex-col">
+          <div
+            className="featured-artist flex-col"
+            onClick={() => handleClick()}
+          >
             <div className="featured-artist-description">
               <h2>Michelangelo</h2>
               <h3>1475-1564</h3>
@@ -28,7 +39,10 @@ function TopLeft() {
             </div>
           </div>
           <div className="featured-artist flex-col">
-            <div className="featured-artist-description">
+            <div
+              className="featured-artist-description"
+              onClick={() => handleClick()}
+            >
               <h2>Pablo Picasso</h2>
               <h3>1881-1973</h3>
               <h3>Spanish</h3>

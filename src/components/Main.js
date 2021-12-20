@@ -1,7 +1,8 @@
 import Search from './Search';
 import Top from './Top';
 import '../styles/gallery.css';
-import '../styles/about.css';
+import '../styles/timeline.css';
+import '../styles/footer.css';
 import { v4 as uuidv4 } from 'uuid';
 
 import { gallery } from '../utils';
@@ -13,7 +14,8 @@ export default function Main() {
       <Top />
       <Search />
       <Gallery />
-      <About />
+      <Timeline />
+      <Footer />
     </main>
   );
 }
@@ -37,6 +39,10 @@ function Gallery() {
   );
 }
 
-function About() {
-  return <div className="about"></div>;
+function Timeline() {
+  return <div className="timeline"></div>;
+}
+
+function Footer() {
+  return <div className="footer"></div>;
 }

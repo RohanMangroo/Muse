@@ -1,0 +1,26 @@
+.single-artist-container {
+}
+
+.artist-container {
+  height: 1600px;
+  width: 1300px;
+  background-color: rgb(160, 95, 159);
+  margin: auto;
+  margin-top: 50px;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.sub-container {
+  height: 650px;
+  width: 100%;
+  background-color: rgb(160, 138, 95);
+}
+
+.one {
+  background-color: darkblue;
+}
+
+.two {
+  background-color: darkgreen;
+}

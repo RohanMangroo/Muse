@@ -12,7 +12,7 @@ function HomePage({ updateCurrentPage_ }) {
   });
 
   return (
-    <div>
+    <div className="homepage">
       <Hero />
       <Main />
     </div>
