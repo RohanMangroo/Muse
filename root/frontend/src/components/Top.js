@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { randomArtImages, featuredArtistDescriptions } from '../utils';
+import { featuredArtistDescriptions } from '../utils';
 import { v4 as uuidv4 } from 'uuid';
 import '../styles/main-top.css';
+
+import Axios from 'axios';
 
 export default function Top() {
   return (
@@ -56,31 +58,54 @@ function TopLeft() {
 }
 
 function TopRight() {
+  const [result, setResult] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const images = await Axios.get('/api/randomArtists');
+      setResult(images.data);
+    }
+
+    fetchData();
+  }, []);
+
+  async function handleClick() {
+    const images = await Axios.get('/api/randomArtists');
+    setResult(images.data);
+    console.log(result);
+  }
+
   return (
     <section className="top-right flex-col">
       <div className="random-art flex-col">
         <header className="center-item">
           <h2>Random Art</h2>
-          <button></button>
+          <button onClick={() => handleClick()}></button>
         </header>
         {/* <section>{createSection(9, 2, 'random-art-card flex-col')}</section> */}
         <section>
-          {randomArtImages.map((obj) => {
-            return (
-              <div
-                style={{ backgroundImage: `url(${obj.img})` }}
-                className="random-art-card flex-col"
-                key={uuidv4()}
-              >
-                <div></div>
-                <div className="center-item">
-                  <h3>{obj.artist}</h3>
-                </div>
-              </div>
-            );
-          })}
+          <RandomImages images={result} />
         </section>
       </div>
     </section>
   );
+}
+
+function RandomImages({ images }) {
+  return images.map((img) => {
+    return (
+      <div
+        style={{
+          backgroundImage: `url(https://www.artic.edu/iiif/2/${img.imageid}/full/200,/0/default.jpg)`,
+        }}
+        className="random-art-card flex-col"
+        key={uuidv4()}
+      >
+        <div></div>
+        <div className="center-item">
+          <h3>{img.artist_name.split(' ')[1]}</h3>
+        </div>
+      </div>
+    );
+  });
 }

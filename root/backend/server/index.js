@@ -1,19 +1,30 @@
 const express = require('express');
-const path = require('path');
-const randomArtist = require('./api/randomArtist');
+const cookieSession = require('cookie-session');
+// const path = require('path');
+const randomArtists = require('./api/randomArtists');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '../../', 'frontend/build')));
+// app.use(
+//   cookieSession({
+//     name: 'session',
+//     keys: ['key1'],
 
-app.use('/api', randomArtist);
+//     // Cookie Options
+//     sameSite: 'none',
+//     secure: true,
+//   })
+// );
+// app.use(express.static(path.join(__dirname, '../../', 'frontend/build')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../', 'frontend/build', 'index.html'));
-});
+app.use('/api', randomArtists);
+
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../../', 'frontend/build', 'index.html'));
+// });
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
