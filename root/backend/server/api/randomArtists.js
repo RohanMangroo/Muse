@@ -1,11 +1,11 @@
 const randomArtists = require('express').Router();
-const produceRandomQuery = require('../queries');
+const { produceRandomQuery } = require('../queries');
 const pool = require('../db');
 
 randomArtists.get('/randomArtists', async (req, res) => {
   try {
     const randomArtworks = await pool.query(produceRandomQuery());
-    res.send(randomArtworks.rows);
+    res.send(randomArtworks.rows).status(200);
   } catch (err) {
     console.error(err.message);
   }

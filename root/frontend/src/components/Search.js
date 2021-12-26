@@ -1,27 +1,32 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import magGlass from '../resources/Icon.svg';
-import { dropDownInfo } from '../utils';
+import Axios from 'axios';
+import { dropDownInfo, defaultSearch } from '../utils';
 import '../styles/search.css';
 import '../styles/search-results.css';
-import { resultImages } from '../utils';
 
 export default function Search() {
+  const [currentArtist, setCurrentArtist] = useState(defaultSearch);
+
+  const imageLink = `https://www.artic.edu/iiif/2/${currentArtist[0].imageid}/full/843,/0/default.jpg`;
   return (
     <div className="search flex-row">
+      {console.dir(currentArtist)}
       <section className="results">
-        <div style={{ backgroundImage: `url(${resultImages[0].img})` }}>
+        <div style={{ backgroundImage: `url(${imageLink})` }}>
           <div className="results-info">
-            <h1>{resultImages[0].artist}</h1>
-            <h2>{resultImages[0].active}</h2>
-            <h2>{resultImages[0].nationality}</h2>
+            <h1>{currentArtist[0].artist_name}</h1>
+            <h2></h2>
+            <h2>{currentArtist[0].origin}</h2>
           </div>
         </div>
         <div className="related-results">
-          {resultImages.map((image, index) => {
+          {currentArtist.map((artwork, index) => {
+            const imageLink = `https://www.artic.edu/iiif/2/${artwork.imageid}/full/843,/0/default.jpg`;
             return index > 0 ? (
               <div
-                style={{ backgroundImage: `url(${image.img})` }}
+                style={{ backgroundImage: `url(${imageLink})` }}
                 key={uuidv4()}
               >
                 <div></div>
@@ -37,8 +42,7 @@ export default function Search() {
           <h2>Search</h2>
         </header>
         <div className="search-bar-container flex-col center-item">
-          <SearchBar name="search" />
-          <div className="search-bar-btn center-item ">Search</div>
+          <SearchBar name="search" func={setCurrentArtist} />
         </div>
         <SearchSubContainer />
       </section>
@@ -46,24 +50,38 @@ export default function Search() {
   );
 }
 
-function SearchBar({ name }) {
+function SearchBar({ name, func }) {
   const [search, setSearch] = useState('');
 
+  async function handleClick() {
+    if (search === '') return;
+    const artist = await Axios.get(`/api/${search}`);
+    func(artist.data);
+  }
+
   return (
-    <form className="search-bar center-item">
-      <div className="flex-row">
-        <input
-          placeholder="Search by Artist Name"
-          type="text"
-          value={search}
-          name={name}
-          onChange={(e) => setSearch(e.target.value)}
-        ></input>
-        <span className="center-item">
-          <img src={magGlass} alt="mag"></img>
-        </span>
+    <>
+      <form className="search-bar center-item">
+        <div className="flex-row">
+          <input
+            placeholder="Search by Artist Name"
+            type="text"
+            value={search}
+            name={name}
+            onChange={(e) => setSearch(e.target.value)}
+          ></input>
+          <span className="center-item">
+            <img src={magGlass} alt="mag"></img>
+          </span>
+        </div>
+      </form>
+      <div
+        className="search-bar-btn center-item "
+        onClick={() => handleClick()}
+      >
+        Search
       </div>
-    </form>
+    </>
   );
 }
 

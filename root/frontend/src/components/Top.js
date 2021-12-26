@@ -72,7 +72,6 @@ function TopRight() {
   async function handleClick() {
     const images = await Axios.get('/api/randomArtists');
     setResult(images.data);
-    console.log(result);
   }
 
   return (
@@ -82,7 +81,6 @@ function TopRight() {
           <h2>Random Art</h2>
           <button onClick={() => handleClick()}></button>
         </header>
-        {/* <section>{createSection(9, 2, 'random-art-card flex-col')}</section> */}
         <section>
           <RandomImages images={result} />
         </section>
