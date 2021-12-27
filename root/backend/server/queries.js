@@ -3,8 +3,8 @@
 // INNER JOIN artists
 // ON artworks.artist_id = artists.artist.id
 
-function searchByNameQuery(name) {
-  const query = `SELECT artists.artist_name, artworks.* FROM artworks JOIN artists ON artists.id = artworks.artistid WHERE artists.artist_name = '${name}' LIMIT 4`;
+function searchByIDQuery(id) {
+  const query = `SELECT artists.artist_name, artworks.* FROM artworks JOIN artists ON artists.id = artworks.artistid WHERE artists.id = '${id}' LIMIT 4`;
 
   return query;
 }
@@ -23,4 +23,4 @@ function genRandomNum() {
   return Math.floor(Math.random() * 500) + 1;
 }
 
-module.exports = { produceRandomQuery, searchByNameQuery };
+module.exports = { produceRandomQuery, searchByIDQuery };
