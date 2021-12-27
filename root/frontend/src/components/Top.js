@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { featuredArtistDescriptions } from '../utils';
 import { v4 as uuidv4 } from 'uuid';
+import { updateModel } from '../store/modelReducer';
 import '../styles/main-top.css';
 
 import Axios from 'axios';
@@ -82,14 +84,17 @@ function TopRight() {
           <button onClick={() => handleClick()}></button>
         </header>
         <section>
-          <RandomImages images={result} />
+          <ConnectedRandomImages images={result} />
         </section>
       </div>
     </section>
   );
 }
 
-function RandomImages({ images }) {
+function RandomImages({ images, updateModel_ }) {
+  function handleClick(id) {
+    updateModel_(true);
+  }
   return images.map((img) => {
     return (
       <div
@@ -98,6 +103,7 @@ function RandomImages({ images }) {
         }}
         className="random-art-card flex-col"
         key={uuidv4()}
+        onClick={() => handleClick(img.artistid)}
       >
         <div></div>
         <div className="center-item">
@@ -107,3 +113,13 @@ function RandomImages({ images }) {
     );
   });
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateModel_: (boolean) => {
+      return dispatch(updateModel(boolean));
+    },
+  };
+};
+
+const ConnectedRandomImages = connect(null, mapDispatchToProps)(RandomImages);

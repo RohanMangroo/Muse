@@ -1,27 +1,34 @@
+import React from 'react';
+import { connect } from 'react-redux';
 import Search from './Search';
 import Top from './Top';
 import '../styles/gallery.css';
-import '../styles/timeline.css';
-import '../styles/footer.css';
+import '../styles/model.css';
 import { v4 as uuidv4 } from 'uuid';
-
 import { gallery } from '../utils';
 
 /*Main Component*/
-export default function Main() {
+function Main() {
   return (
-    <main className="main-container flex-col">
-      <Top />
-      <Search />
-      <Gallery />
-      <Timeline />
-      <Footer />
-    </main>
+    <>
+      <main className="main-container flex-col">
+        <Top />
+        <Search />
+        <Gallery />
+      </main>
+    </>
   );
 }
 
+const mapStateToProps = ({ model }) => {
+  return {
+    openModel: model,
+  };
+};
+
+export default connect(mapStateToProps, null)(Main);
+
 function Gallery() {
-  // return <div className="gallery">{createSection(14, 0, 'grid-cell')}</div>;
   return (
     <div style={{ overflow: 'auto' }}>
       <div className="gallery">
@@ -37,12 +44,4 @@ function Gallery() {
       </div>
     </div>
   );
-}
-
-function Timeline() {
-  return <div className="timeline"></div>;
-}
-
-function Footer() {
-  return <div className="footer"></div>;
 }

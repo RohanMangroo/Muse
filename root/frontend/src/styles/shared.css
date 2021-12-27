@@ -18,6 +18,14 @@
   --blue-ish-accent: rgb(146, 201, 236);
 }
 
+.App {
+  height: 100vh;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .display-none {
   display: none;
 }

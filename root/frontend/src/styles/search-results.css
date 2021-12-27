@@ -28,9 +28,11 @@
 
 .results-info:hover {
   background: transparent;
+  color: transparent;
   transition-duration: 500ms;
   cursor: pointer;
 }
+
 .results-info h1 {
   font-weight: 100;
   font-size: 5rem;
@@ -41,6 +43,13 @@
   font-size: 2rem;
   font-weight: 100;
   color: white;
+  transition-duration: 500ms;
+}
+
+.results-info:hover > h2 {
+  background: transparent;
+  color: transparent;
+  transition-duration: 500ms;
 }
 
 /*Container for related Search results*/

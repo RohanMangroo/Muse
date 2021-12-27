@@ -46,27 +46,38 @@ export default function Search() {
 }
 
 function FilterSearch({ name, setArtist }) {
-  const [search, setSearch] = useState('');
+  const [filter, setFilter] = useState('');
+  const [list, setList] = useState(artistsInDatabase);
+
+  function handleChange(e) {
+    setFilter(e.target.value);
+    setList(
+      artistsInDatabase.filter((obj) =>
+        obj.artist_name.toLowerCase().includes(e.target.value.toLowerCase())
+      )
+    );
+  }
 
   return (
     <>
       <form className="search-bar center-item">
         <div className="flex-row">
           <input
-            placeholder="Filter By Last Name"
+            placeholder="Search Name"
             type="text"
-            value={search}
+            value={filter}
             name={name}
-            onChange={(e) => setSearch(e.target.value)}
+            // onChange={(e) => setFilter(e.target.value)}
+            onChange={(e) => handleChange(e)}
           ></input>
         </div>
       </form>
-      <ListOfArtists setArtist={setArtist} />
+      <ListOfArtists currentList={list} setArtist={setArtist} />
     </>
   );
 }
 
-function ListOfArtists({ setArtist }) {
+function ListOfArtists({ currentList, setArtist }) {
   async function handleClick(e) {
     const artist = await Axios.get(`/api/${e.target.value}`);
     setArtist(artist.data);
@@ -77,7 +88,7 @@ function ListOfArtists({ setArtist }) {
       className="list-of-artist-container flex-col"
       onClick={(e) => handleClick(e)}
     >
-      {artistsInDatabase.map((artist) => (
+      {currentList.map((artist) => (
         <button className="individual-artist" key={uuidv4()} value={artist.id}>
           {artist.artist_name}
         </button>
