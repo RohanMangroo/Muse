@@ -79,7 +79,7 @@ function FilterSearch({ name, setArtist }) {
 
 function ListOfArtists({ currentList, setArtist }) {
   async function handleClick(e) {
-    const artist = await Axios.get(`/api/${e.target.value}`);
+    const artist = await Axios.get(`/api/${e.target.value}/4`);
     setArtist(artist.data);
   }
 

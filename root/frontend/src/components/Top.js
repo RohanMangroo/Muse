@@ -5,6 +5,7 @@ import { featuredArtistDescriptions } from '../utils';
 import { v4 as uuidv4 } from 'uuid';
 import { updateModal } from '../store/modalReducer';
 import '../styles/main-top.css';
+import { updateCurrentArtistID } from '../store/currentArtistIDReducer';
 
 import Axios from 'axios';
 
@@ -91,9 +92,10 @@ function TopRight() {
   );
 }
 
-function RandomImages({ images, updateModal_ }) {
+function RandomImages({ images, updateModal_, updateCurrentArtistID_ }) {
   function handleClick(id) {
     updateModal_(true);
+    updateCurrentArtistID_(id);
   }
   return images.map((img) => {
     return (
@@ -118,6 +120,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     updateModal_: (boolean) => {
       return dispatch(updateModal(boolean));
+    },
+    updateCurrentArtistID_: (id) => {
+      return dispatch(updateCurrentArtistID(id));
     },
   };
 };

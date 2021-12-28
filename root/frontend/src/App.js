@@ -11,19 +11,13 @@ function App({ openModal }) {
   const appRef = useRef();
 
   useEffect(() => {
-    if (openModal) {
-      appRef.current.style.top = `-${window.pageYOffset}px`;
-      appRef.current.style.position = 'fixed';
-    } else {
-      const scrollY = appRef.current.style.top;
-      appRef.current.style.position = '';
-      appRef.current.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
-    }
+    if (openModal) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = '';
   });
+
   return (
     <Router>
-      <div ref={appRef} className={openModal ? 'modal-is-open' : ''}>
+      <div ref={appRef} className={openModal ? 'app modal-is-open' : 'app'}>
         <NavBar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
