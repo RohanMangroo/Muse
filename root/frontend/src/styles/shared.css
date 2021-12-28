@@ -18,12 +18,9 @@
   --blue-ish-accent: rgb(146, 201, 236);
 }
 
-.App {
-  height: 100vh;
-}
-
-.overflow-hidden {
-  overflow: hidden;
+.modal-is-open {
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .display-none {

@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { updateModel } from '../store/modelReducer';
+import { updateModal } from '../store/modalReducer';
 
-function Model({ updateModel_ }) {
+function Modal({ updateModal_ }) {
   function handleClick() {
-    updateModel_(false);
+    updateModal_(false);
   }
   return (
     <div className="model-container center-item">
@@ -16,10 +16,10 @@ function Model({ updateModel_ }) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateModel_: (boolean) => {
-      return dispatch(updateModel(boolean));
+    updateModal_: (boolean) => {
+      return dispatch(updateModal(boolean));
     },
   };
 };
 
-export default connect(null, mapDispatchToProps)(Model);
+export default connect(null, mapDispatchToProps)(Modal);

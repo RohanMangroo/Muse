@@ -1,10 +1,10 @@
 // Action Type
-const UPDATE_MODEL = 'UPDATE_MODEL';
+const UPDATE_MODAL = 'UPDATE_MODAL';
 
 // Action creators
-export const updateModel = (boolean) => {
+export const updateModal = (boolean) => {
   return {
-    type: UPDATE_MODEL,
+    type: UPDATE_MODAL,
     payload: {
       openModel: boolean,
     },
@@ -13,13 +13,13 @@ export const updateModel = (boolean) => {
 
 const initialState = false;
 
-const modelReducer = (state = initialState, { type, payload }) => {
+const modalReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case UPDATE_MODEL:
+    case UPDATE_MODAL:
       return payload.openModel;
     default:
       return state;
   }
 };
 
-export default modelReducer;
+export default modalReducer;

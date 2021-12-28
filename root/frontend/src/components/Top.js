@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { featuredArtistDescriptions } from '../utils';
 import { v4 as uuidv4 } from 'uuid';
-import { updateModel } from '../store/modelReducer';
+import { updateModal } from '../store/modalReducer';
 import '../styles/main-top.css';
 
 import Axios from 'axios';
@@ -91,9 +91,9 @@ function TopRight() {
   );
 }
 
-function RandomImages({ images, updateModel_ }) {
+function RandomImages({ images, updateModal_ }) {
   function handleClick(id) {
-    updateModel_(true);
+    updateModal_(true);
   }
   return images.map((img) => {
     return (
@@ -116,8 +116,8 @@ function RandomImages({ images, updateModel_ }) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateModel_: (boolean) => {
-      return dispatch(updateModel(boolean));
+    updateModal_: (boolean) => {
+      return dispatch(updateModal(boolean));
     },
   };
 };

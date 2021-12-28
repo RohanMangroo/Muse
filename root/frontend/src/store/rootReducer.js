@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import { createStore } from 'redux';
 import currentPageReducer from './currentPageReducer';
-import modelReducer from './modelReducer';
+import modalReducer from './modalReducer';
 
 const rootReducer = combineReducers({
   currentPage: currentPageReducer,
-  model: modelReducer,
+  modal: modalReducer,
 });
 const store = createStore(rootReducer);
 
