@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { connect } from 'react-redux';
 import { updateModal } from '../store/modalReducer';
-import { v4 as uuidv4 } from 'uuid';
-import { defaultSearch } from '../utils';
+import CurrentImage from './CurrentImage';
+import GridImages from './GridImages';
 
 function Modal({ artistID, updateModal_ }) {
-  const [artworks, setArtworks] = useState(defaultSearch);
+  const [artworks, setArtworks] = useState([]);
 
   useEffect(() => {
     async function getArtworks() {
@@ -21,23 +21,20 @@ function Modal({ artistID, updateModal_ }) {
     updateModal_(false);
   }
 
-  const imageLink = `https://www.artic.edu/iiif/2/${artworks[0].imageid}/full/843,/0/default.jpg`;
-
   return (
     <div className="model-container center-item">
       <div className="model flex-row">
         <section className="left flex-col">
-          <div
-            className="current-image"
-            style={{ backgroundImage: `url(${imageLink})` }}
-          ></div>
+          <CurrentImage />
           <div className="image-info flex-col">
             <h1>Dog stealing a workman's meal from a snow Daruma</h1>
             <h3>Utagawa Hiroshige</h3>
           </div>
         </section>
         <section className="right flex-col">
-          <div className="images-grid">{produceDivs()}</div>
+          <div className="images-grid">
+            <GridImages artworks={artworks} />
+          </div>
         </section>
         <button onClick={() => handleClick()} className="center-item">
           X
@@ -62,11 +59,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);
-
-function produceDivs() {
-  const array = [];
-  for (let i = 0; i < 20; i++) {
-    array.push(<div className="image-div" key={uuidv4()}></div>);
-  }
-  return array;
-}

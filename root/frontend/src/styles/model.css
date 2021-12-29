@@ -85,6 +85,10 @@
 
 .image-div {
   background-color: rgb(236, 236, 236);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .model button {

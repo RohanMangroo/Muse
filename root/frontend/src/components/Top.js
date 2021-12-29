@@ -101,7 +101,7 @@ function RandomImages({ images, updateModal_, updateCurrentArtistID_ }) {
     return (
       <div
         style={{
-          backgroundImage: `url(https://www.artic.edu/iiif/2/${img.imageid}/full/200,/0/default.jpg)`,
+          backgroundImage: `url(https://www.artic.edu/iiif/2/${img.imageid}/full/400,/0/default.jpg)`,
         }}
         className="random-art-card flex-col"
         key={uuidv4()}

@@ -4,7 +4,6 @@ const pool = require('../db');
 
 searchByID.get('/:id/:limit', async (req, res) => {
   const limit = req.params.limit;
-  console.log(req.params);
   const currentQuery = limit === '0' ? searchByIDLimitNone : searchByIDLimit4;
   try {
     const artist = await pool.query(currentQuery(req.params.id));
