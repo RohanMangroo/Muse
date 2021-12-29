@@ -26,10 +26,7 @@ function Modal({ artistID, updateModal_ }) {
       <div className="model flex-row">
         <section className="left flex-col">
           <CurrentImage />
-          <div className="image-info flex-col">
-            <h1>Dog stealing a workman's meal from a snow Daruma</h1>
-            <h3>Utagawa Hiroshige</h3>
-          </div>
+          <div className="image-info flex-col"></div>
         </section>
         <section className="right flex-col">
           <div className="images-grid">

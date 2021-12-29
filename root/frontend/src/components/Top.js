@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { updateModal } from '../store/modalReducer';
 import '../styles/main-top.css';
 import { updateCurrentArtistID } from '../store/currentArtistIDReducer';
+import { updateCurrentMainImage } from '../store/currentMainImageReducer';
 
 import Axios from 'axios';
 
@@ -92,10 +93,16 @@ function TopRight() {
   );
 }
 
-function RandomImages({ images, updateModal_, updateCurrentArtistID_ }) {
-  function handleClick(id) {
+function RandomImages({
+  images,
+  updateModal_,
+  updateCurrentArtistID_,
+  updateCurrentMainImage_,
+}) {
+  function handleClick(img) {
     updateModal_(true);
-    updateCurrentArtistID_(id);
+    updateCurrentArtistID_(img.artistid);
+    updateCurrentMainImage_(img);
   }
   return images.map((img) => {
     return (
@@ -105,7 +112,7 @@ function RandomImages({ images, updateModal_, updateCurrentArtistID_ }) {
         }}
         className="random-art-card flex-col"
         key={uuidv4()}
-        onClick={() => handleClick(img.artistid)}
+        onClick={() => handleClick(img)}
       >
         <div></div>
         <div className="center-item">
@@ -123,6 +130,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     updateCurrentArtistID_: (id) => {
       return dispatch(updateCurrentArtistID(id));
+    },
+    updateCurrentMainImage_: (artwork) => {
+      return dispatch(updateCurrentMainImage(artwork));
     },
   };
 };

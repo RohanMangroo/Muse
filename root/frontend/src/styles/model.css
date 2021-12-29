@@ -30,7 +30,7 @@
 }
 
 .current-image {
-  height: 82.5%;
+  height: 100%;
   width: 100%;
   background-color: rgb(236, 236, 236);
   background-position: center;
@@ -38,14 +38,22 @@
   background-repeat: no-repeat;
 }
 
-.image-info {
-  height: 15%;
-  width: 100%;
-  background-color: lightgray;
+.current-image-info {
   font-family: 'Roboto';
   gap: 5px;
+  padding: 5px;
+  padding-top: 20px;
 }
 
+.current-image-info h3 {
+  font-weight: 100;
+  font-style: italic;
+}
+
+.current-image-info h4 {
+  padding-top: 5px;
+  font-weight: 500;
+}
 .image-info h1 {
   font-weight: 100;
   font-style: italic;

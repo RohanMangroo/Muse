@@ -1,18 +1,35 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Axios from 'axios';
+import { connect } from 'react-redux';
 import { defaultSearch, artistsInDatabase } from '../utils';
+import { updateModal } from '../store/modalReducer';
+import { updateCurrentArtistID } from '../store/currentArtistIDReducer';
+import { updateCurrentMainImage } from '../store/currentMainImageReducer';
 import '../styles/search.css';
 import '../styles/search-results.css';
 
-export default function Search() {
+function Search({
+  updateModal_,
+  updateCurrentArtistID_,
+  updateCurrentMainImage_,
+}) {
   const [currentArtist, setCurrentArtist] = useState(defaultSearch);
+
+  function handleClick(artwork) {
+    updateCurrentArtistID_(artwork.artistid);
+    updateCurrentMainImage_(artwork);
+    updateModal_(true);
+  }
 
   const imageLink = `https://www.artic.edu/iiif/2/${currentArtist[0].imageid}/full/843,/0/default.jpg`;
   return (
     <div className="search flex-row">
       <section className="results">
-        <div style={{ backgroundImage: `url(${imageLink})` }}>
+        <div
+          style={{ backgroundImage: `url(${imageLink})` }}
+          onClick={() => handleClick(currentArtist[0])}
+        >
           <div className="results-info">
             <h1>{currentArtist[0].artist_name}</h1>
             <h2></h2>
@@ -26,6 +43,7 @@ export default function Search() {
               <div
                 style={{ backgroundImage: `url(${imageLink})` }}
                 key={uuidv4()}
+                onClick={() => handleClick(artwork)}
               >
                 <div></div>
               </div>
@@ -44,6 +62,22 @@ export default function Search() {
     </div>
   );
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateModal_: (boolean) => {
+      return dispatch(updateModal(boolean));
+    },
+    updateCurrentArtistID_: (id) => {
+      return dispatch(updateCurrentArtistID(id));
+    },
+    updateCurrentMainImage_: (artwork) => {
+      return dispatch(updateCurrentMainImage(artwork));
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Search);
 
 function FilterSearch({ name, setArtist }) {
   const [filter, setFilter] = useState('');
