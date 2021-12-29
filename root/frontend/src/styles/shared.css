@@ -18,11 +18,6 @@
   --blue-ish-accent: rgb(146, 201, 236);
 }
 
-/* .modal-is-open {
-  left: 50%;
-  transform: translate(-50%);
-} */
-
 .display-none {
   display: none;
 }

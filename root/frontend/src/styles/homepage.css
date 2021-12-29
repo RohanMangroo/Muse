@@ -1,17 +1,14 @@
-/* body {
-  overflow: hidden;
-} */
+.homepage {
+  margin-top: 10px;
+}
 
 .main-container {
-  height: 2100px;
+  height: 1400px;
   width: 1300px;
   margin: auto;
-  margin-top: 50px;
   gap: 30px;
 }
 
 .position-fixed {
   overflow: hidden;
-  /* left: 50%;
-  transform: translateX(-50%); */
 }

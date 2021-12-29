@@ -1,33 +1,13 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { updateCurrentPage } from '../store/currentPageReducer';
+import React from 'react';
 import '../styles/homepage.css';
-import Hero from './Hero';
 import Main from '../components/Main';
 
-function HomePage({ updateCurrentPage_, openModal }) {
-  useEffect(() => {
-    updateCurrentPage_('homePage');
-  });
-
-  const homePageClassName = `homepage ${openModal ? 'position-fixed' : ''}`;
-
+export default function HomePage({ openModal }) {
   return (
     <>
-      <div className={homePageClassName}>
-        <Hero />
+      <div className="homepage">
         <Main />
       </div>
     </>
   );
 }
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    updateCurrentPage_: (page) => {
-      return dispatch(updateCurrentPage(page));
-    },
-  };
-};
-
-export default connect(null, mapDispatchToProps)(HomePage);

@@ -12,30 +12,6 @@ nav {
   height: 100%;
   width: 1300px;
   margin: auto;
-  display: flex;
-  gap: 3px;
-}
-
-ul {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  display: flex;
-  border: solid thin var(--main-color);
-}
-
-li {
-  list-style: none;
-  background-color: var(--main-color);
-}
-
-li div {
-  height: 100%;
-  width: 100px;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
 }
 
 .logo {
