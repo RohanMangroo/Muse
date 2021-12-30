@@ -1,29 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
 
-/**Gallery */
-import image1 from './resources/galleryImages/image1.jpeg';
-import image2 from './resources/galleryImages/image2.jpeg';
-import image3 from './resources/galleryImages/image3.jpg';
-import image4 from './resources/galleryImages/image4.jpeg';
-import image5 from './resources/galleryImages/image5.jpeg';
-import image6 from './resources/galleryImages/image6.jpeg';
-import image7 from './resources/galleryImages/image7.jpeg';
-import image8 from './resources/galleryImages/image8.jpg';
-import image9 from './resources/galleryImages/image9.jpeg';
-import image10 from './resources/galleryImages/image10.jpeg';
-import image11 from './resources/galleryImages/image11.jpeg';
-import image12 from './resources/galleryImages/image12.jpeg';
-import image13 from './resources/galleryImages/image13.jpeg';
-import image14 from './resources/galleryImages/image14.jpeg';
-
-/**Hero Images */
-import monet from './resources/heroImages/Claude-Monet.jpeg';
-import hockney from './resources/heroImages/hockney-top.jpg';
-import wave from './resources/heroImages/main-image.jpeg';
-import night from './resources/heroImages/night.jpg';
-import kankan from './resources/heroImages/Wassily.jpg';
-import paul from './resources/heroImages/PaulCezanne6.jpg';
-
 export const defaultSearch = [
   {
     artist_name: 'Utagawa Hiroshige',
@@ -66,102 +42,6 @@ export const defaultSearch = [
   },
 ];
 
-export const gallery = [
-  {
-    title: 'Title',
-    img: image1,
-  },
-  {
-    title: 'Title',
-    img: image2,
-  },
-  {
-    title: 'Title',
-    img: image3,
-  },
-  {
-    title: 'Title',
-    img: image4,
-  },
-  {
-    title: 'Title',
-    img: image5,
-  },
-  {
-    title: 'Title',
-    img: image6,
-  },
-  {
-    title: 'Title',
-    img: image7,
-  },
-  {
-    title: 'Title',
-    img: image8,
-  },
-  {
-    title: 'Title',
-    img: image9,
-  },
-  {
-    title: 'Title',
-    img: image10,
-  },
-  {
-    title: 'Title',
-    img: image11,
-  },
-  {
-    title: 'Title',
-    img: image12,
-  },
-  {
-    title: 'Title',
-    img: image13,
-  },
-  {
-    title: 'Title',
-    img: image14,
-  },
-];
-/**Drop Down Menu Arrays */
-export const dropDownInfo = {
-  museum: ['All Museums', 'Metropolitan Museum of Art', 'museum', 'museum'],
-  type: ['Drawings', 'Paintings', 'Sculptures', 'Antiquity', 'Miscellaneous'],
-  genre: [
-    'The Renaissance',
-    'Rococo',
-    'Romanticism',
-    'Impressionism',
-    'Expressionism',
-    'Surrealism',
-    'Abstract',
-  ],
-  century: [
-    '1900',
-    '1800',
-    '1700',
-    '1600',
-    '1500',
-    '1400',
-    '1300',
-    '1200',
-    '1100',
-    'pre-1000',
-  ],
-  medium: [
-    'Oil',
-    'Acrylic',
-    'Watercolors',
-    'Charcoal',
-    'Pastels',
-    'Graphite',
-    'Ink',
-    'Marbel',
-  ],
-};
-
-export const heroImages = [paul, monet, hockney, wave, night, kankan];
 export const featuredArtistDescriptions = {
   artistOne: {
     p1: `Michelangelo di Lodovico Buonarroti Simoni, known simply as
@@ -186,29 +66,6 @@ export const featuredArtistDescriptions = {
     p2: `Picasso demonstrated extraordinary artistic talent in his early years, painting in a naturalistic manner through his childhood and adolescence. During the first decade of the 20th century, his style changed as he experimented with different theories, techniques, and ideas`,
   },
 };
-/*Creates a section of Divs*/
-export function createSection(
-  stop,
-  nestedCount = 0,
-  parentClass = null,
-  childClass = null
-) {
-  const array = [];
-  const nestedDivs = [];
-
-  for (let i = 0; i < nestedCount; i++) {
-    nestedDivs.push(<div className={childClass} key={uuidv4()}></div>);
-  }
-
-  for (let i = 0; i < stop; i++) {
-    array.push(
-      <div className={parentClass} key={uuidv4()}>
-        {nestedDivs}
-      </div>
-    );
-  }
-  return array;
-}
 
 export const artistsInDatabase = [
   {

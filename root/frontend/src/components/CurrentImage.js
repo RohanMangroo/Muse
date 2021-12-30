@@ -6,7 +6,9 @@ function CurrentImage({ artwork }) {
     ? `url(https://www.artic.edu/iiif/2/${artwork.imageid}/full/843,/0/default.jpg)`
     : '';
   const title = artwork ? artwork.title : 'Title? What title?';
-  const artistName = artwork ? artwork.artist_name : 'Name you say?';
+  const display = artwork ? artwork.artist_display : 'Name you say?';
+  const medium = artwork ? artwork.medium_display : 'My bare hands!';
+  const date = artwork ? artwork.date_display : 'Somewhere in time...?';
   return (
     <>
       <div
@@ -14,8 +16,9 @@ function CurrentImage({ artwork }) {
         style={{ backgroundImage: background }}
       ></div>
       <div className="current-image-info">
-        <h3>{title}</h3>
-        <h4>{artistName}</h4>
+        <h3>{`${title}, ${date}`}</h3>
+        <h4>{display}</h4>
+        <h5>{medium}</h5>
       </div>
     </>
   );

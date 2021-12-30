@@ -46,31 +46,21 @@
 }
 
 .current-image-info h3 {
-  font-weight: 100;
+  font-weight: 700;
   font-style: italic;
 }
 
 .current-image-info h4 {
   padding-top: 5px;
   font-weight: 500;
-}
-.image-info h1 {
-  font-weight: 100;
-  font-style: italic;
-  padding: 10px;
+  color: rgb(151, 137, 61);
 }
 
-.image-info h1 {
-  font-weight: 100;
-  font-style: italic;
-  padding: 10px;
+.current-image-info h5 {
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
-.image-info h3 {
-  padding: 0 10px 10px 10px;
-  font-weight: 100;
-  font-size: 1rem;
-}
 /*=========================================*/
 .right {
   height: 100%;

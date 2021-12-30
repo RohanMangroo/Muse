@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { connect } from 'react-redux';
 import { updateModal } from '../store/modalReducer';
+import { updatePosition } from '../store/onScrollReducer';
 import CurrentImage from './CurrentImage';
 import GridImages from './GridImages';
 
-function Modal({ artistID, updateModal_ }) {
+function Modal({ artistID, updateModal_, updatePosition_ }) {
   const [artworks, setArtworks] = useState([]);
 
   useEffect(() => {
@@ -21,6 +22,12 @@ function Modal({ artistID, updateModal_ }) {
     updateModal_(false);
   }
 
+  function handleScroll(e) {
+    const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
+    if (scrollHeight - scrollTop === clientHeight)
+      updatePosition_({ start: 11, stop: 20 });
+  }
+
   return (
     <div className="model-container center-item">
       <div className="model flex-row">
@@ -29,7 +36,7 @@ function Modal({ artistID, updateModal_ }) {
           <div className="image-info flex-col"></div>
         </section>
         <section className="right flex-col">
-          <div className="images-grid">
+          <div className="images-grid" onScroll={(e) => handleScroll(e)}>
             <GridImages artworks={artworks} />
           </div>
         </section>
@@ -51,6 +58,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     updateModal_: (boolean) => {
       return dispatch(updateModal(boolean));
+    },
+    updatePosition_: (newPosition) => {
+      return dispatch(updatePosition(newPosition));
     },
   };
 };
