@@ -51,7 +51,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(GridImages);
 
 function addImagesToGrid(artworks, position) {
   const start = position - 10;
-  const stop = position - 1;
+  const stop = position;
   const array = [];
   for (let i = start; i < stop; i++) {
     array.push(artworks[i]);

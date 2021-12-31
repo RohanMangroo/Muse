@@ -64,7 +64,7 @@
 /*=========================================*/
 .right {
   height: 100%;
-  width: 500px;
+  width: 610px;
   padding: 40px 17px 20px 0;
   background-color: white;
 }
@@ -78,6 +78,7 @@
   grid-auto-columns: var(--image-scale);
   grid-auto-rows: var(--image-scale);
   gap: 2px;
+  /* border: solid red; */
   overflow: auto;
 }
 

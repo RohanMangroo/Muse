@@ -13,7 +13,7 @@
 .search-container header {
   height: 75px;
   width: 100%;
-  background-color: var(--main-color-accent);
+  background-color: rgb(248, 161, 46);
 }
 .search-container header h2 {
   font-family: 'Comfortaa';
@@ -51,7 +51,7 @@
 .list-of-artist-container {
   width: 100%;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   gap: 5px;
 }
 
@@ -62,21 +62,21 @@
   padding: 15px 0 15px 10px;
   color: white;
   font-family: 'Comfortaa';
-  border: solid thin green;
+  border: solid thin white;
   text-align: left;
 }
 
 .individual-artist:hover {
-  background-color: green;
+  background-color: rgb(248, 161, 46);
   cursor: pointer;
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 7px;
   margin-right: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: red;
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
 }

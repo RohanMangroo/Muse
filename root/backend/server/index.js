@@ -1,24 +1,13 @@
 const express = require('express');
-// const cookieSession = require('cookie-session');
 // const path = require('path');
 const randomArtists = require('./api/randomArtists');
 const searchByID = require('./api/searchByID');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const app = express();
 
 app.use(express.json());
 
-// app.use(
-//   cookieSession({
-//     name: 'session',
-//     keys: ['key1'],
-
-//     // Cookie Options
-//     sameSite: 'none',
-//     secure: true,
-//   })
-// );
 // app.use(express.static(path.join(__dirname, '../../', 'frontend/build')));
 
 app.use('/api', randomArtists);
@@ -31,3 +20,6 @@ app.use('/api', searchByID);
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+
+// https://trinitytuts.com/fix-samesite-cookie-issue-in-chrome-browser/
+// chrome://flags/

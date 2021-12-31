@@ -5,6 +5,7 @@ import { updateModal } from '../store/modalReducer';
 import { updatePosition } from '../store/onScrollReducer';
 import CurrentImage from './CurrentImage';
 import GridImages from './GridImages';
+import '../styles/model.css';
 
 function Modal({ artistID, updateModal_, updatePosition_, position }) {
   const [artworks, setArtworks] = useState([]);
@@ -25,7 +26,7 @@ function Modal({ artistID, updateModal_, updatePosition_, position }) {
 
   function handleScroll(e) {
     const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
-    if (scrollHeight - scrollTop === clientHeight) {
+    if (scrollHeight - scrollTop <= clientHeight) {
       updatePosition_(position + 10);
     }
   }
@@ -37,11 +38,13 @@ function Modal({ artistID, updateModal_, updatePosition_, position }) {
           <CurrentImage />
           <div className="image-info flex-col"></div>
         </section>
-        <section className="right flex-col">
+
+        <section className="right">
           <div className="images-grid" onScroll={(e) => handleScroll(e)}>
             <GridImages artworks={artworks} />
           </div>
         </section>
+
         <button onClick={() => handleClick()} className="center-item">
           X
         </button>

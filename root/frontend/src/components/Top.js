@@ -90,6 +90,7 @@ function RandomImages({
     updateCurrentArtistID_(img.artistid);
     updateCurrentMainImage_(img);
   }
+
   return images.map((img) => {
     return (
       <div

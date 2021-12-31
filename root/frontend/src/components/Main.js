@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Search from './Search';
 import Top from './Top';
-import '../styles/model.css';
 
 /*Main Component*/
 function Main() {

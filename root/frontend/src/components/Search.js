@@ -6,6 +6,8 @@ import { defaultSearch, artistsInDatabase } from '../utils';
 import { updateModal } from '../store/modalReducer';
 import { updateCurrentArtistID } from '../store/currentArtistIDReducer';
 import { updateCurrentMainImage } from '../store/currentMainImageReducer';
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 import '../styles/search.css';
 import '../styles/search-results.css';
 
@@ -101,7 +103,6 @@ function FilterSearch({ name, setArtist }) {
             type="text"
             value={filter}
             name={name}
-            // onChange={(e) => setFilter(e.target.value)}
             onChange={(e) => handleChange(e)}
           ></input>
         </div>
@@ -118,115 +119,18 @@ function ListOfArtists({ currentList, setArtist }) {
   }
 
   return (
-    <div
-      className="list-of-artist-container flex-col"
-      onClick={(e) => handleClick(e)}
-    >
-      {currentList.map((artist) => (
-        <button className="individual-artist" key={uuidv4()} value={artist.id}>
-          {artist.artist_name}
-        </button>
-      ))}
-    </div>
+    <SimpleBar className="list-of-artist-container flex-col">
+      <div onClick={(e) => handleClick(e)}>
+        {currentList.map((artist) => (
+          <button
+            className="individual-artist"
+            key={uuidv4()}
+            value={artist.id}
+          >
+            {artist.artist_name}
+          </button>
+        ))}
+      </div>
+    </SimpleBar>
   );
 }
-/**=================================================== */
-// function SearchBar({ name, func }) {
-//   const [search, setSearch] = useState('');
-
-//   async function handleClick() {
-//     if (search === '') return;
-//     const artistName = search
-//       .split(' ')
-//       .map((word) => {
-//         const arrayOfLetters = word.split('');
-//         arrayOfLetters[0] = arrayOfLetters[0].toUpperCase();
-//         return arrayOfLetters.join('');
-//       })
-//       .join(' ');
-//     const artist = await Axios.get(`/api/${artistName}`);
-//     func(artist.data);
-//   }
-
-//   return (
-//     <>
-//       <form className="search-bar center-item">
-//         <div className="flex-row">
-//           <input
-//             placeholder="Search by Artist Name"
-//             type="text"
-//             value={search}
-//             name={name}
-//             onChange={(e) => setSearch(e.target.value)}
-//           ></input>
-//           <span className="center-item">
-//             <img src={magGlass} alt="mag"></img>
-//           </span>
-//         </div>
-//       </form>
-//       <div
-//         className="search-bar-btn center-item "
-//         onClick={() => handleClick()}
-//       >
-//         Search
-//       </div>
-//     </>
-//   );
-// }
-
-// function DropDownMenu({ info, name, currentInput }) {
-//   const isDisabled = currentInput === name ? false : true;
-
-//   return (
-//     <div className="custom-select center-item">
-//       <div>
-//         <select disabled={isDisabled} name={name}>
-//           {info.map((info) => (
-//             <option key={uuidv4()}>{info}</option>
-//           ))}
-//         </select>
-//         <span className="custom-arrow-container center-item">
-//           <div className="custom-arrow"></div>
-//         </span>
-//       </div>
-//     </div>
-//   );
-// }
-
-// function SearchSubContainer() {
-//   const [currentInput, setCurrentInput] = useState('search');
-
-//   function handleClick(e) {
-//     console.log(currentInput);
-//     const name = e.target.name ? e.target.name : currentInput;
-//     setCurrentInput(name);
-//   }
-
-//   return (
-//     <div className="secondary-menus flex-col" onClick={(e) => handleClick(e)}>
-//       <header className="center-item">Search By</header>
-
-//       <DropDownMenu
-//         info={dropDownInfo.genre}
-//         name="genre"
-//         currentInput={currentInput}
-//       />
-//       <DropDownMenu
-//         info={dropDownInfo.type}
-//         name="type"
-//         currentInput={currentInput}
-//       />
-//       <DropDownMenu
-//         info={dropDownInfo.century}
-//         name="century"
-//         currentInput={currentInput}
-//       />
-//       <DropDownMenu
-//         info={dropDownInfo.medium}
-//         name="medium"
-//         currentInput={currentInput}
-//       />
-//       <div className="search-button center-item">Search</div>
-//     </div>
-//   );
-// }
