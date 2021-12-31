@@ -6,7 +6,7 @@ import { updatePosition } from '../store/onScrollReducer';
 import CurrentImage from './CurrentImage';
 import GridImages from './GridImages';
 
-function Modal({ artistID, updateModal_, updatePosition_ }) {
+function Modal({ artistID, updateModal_, updatePosition_, position }) {
   const [artworks, setArtworks] = useState([]);
 
   useEffect(() => {
@@ -20,12 +20,14 @@ function Modal({ artistID, updateModal_, updatePosition_ }) {
 
   function handleClick() {
     updateModal_(false);
+    updatePosition_(10);
   }
 
   function handleScroll(e) {
     const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
-    if (scrollHeight - scrollTop === clientHeight)
-      updatePosition_({ start: 11, stop: 20 });
+    if (scrollHeight - scrollTop === clientHeight) {
+      updatePosition_(position + 10);
+    }
   }
 
   return (
@@ -48,9 +50,10 @@ function Modal({ artistID, updateModal_, updatePosition_ }) {
   );
 }
 
-const mapStateToProps = ({ artistID }) => {
+const mapStateToProps = ({ artistID, currentPosition }) => {
   return {
     artistID: artistID.id,
+    position: currentPosition,
   };
 };
 
