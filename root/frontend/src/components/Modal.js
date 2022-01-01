@@ -21,13 +21,18 @@ function Modal({ artistID, updateModal_, updatePosition_, position }) {
 
   function handleClick() {
     updateModal_(false);
-    updatePosition_(10);
+    updatePosition_({ start: 0, stop: 10 });
   }
 
   function handleScroll(e) {
+    const { start, stop } = position;
     const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
-    if (scrollHeight - scrollTop <= clientHeight) {
-      updatePosition_(position + 10);
+    if (position === artworks.length) return;
+    else if (scrollHeight - scrollTop <= clientHeight + 100) {
+      const newPosition = stop + 10;
+      newPosition >= artworks.length
+        ? updatePosition_({ start: stop, stop: artworks.length })
+        : updatePosition_({ start: stop, stop: start + 10 });
     }
   }
 

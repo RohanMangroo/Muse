@@ -42,13 +42,11 @@
 }
 
 .sub-container .featured-artist:nth-child(1) {
-  background-image: url('../resources/Moses_by_Michelangelo.jpg');
   background-size: 500px;
   background-position: center top;
 }
 
 .sub-container .featured-artist:nth-child(2) {
-  background-image: url('../resources/picasso.png');
   background-size: 500px;
   background-position: center;
 }
@@ -64,33 +62,15 @@
 }
 
 .featured-artist-description {
-  height: 20%;
+  height: 15%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   font-family: 'Roboto', sans-serif;
   color: #f2e1a6;
   padding: 10px;
-}
-
-.featured-artist-description h2 {
-  margin-bottom: 10px;
-}
-
-.featured-artist-description h3 {
-  color: lightgrey;
-  font-weight: 100;
-}
-
-.featured-artist-description p {
-  display: none;
-  color: white;
-  font-weight: 100;
-  line-height: 1.7rem;
-  margin-top: 20px;
-}
-
-.featured-artist:hover .featured-artist-description p {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /*=========================================*/
 /*RIGHT SIDE OF TOP*/

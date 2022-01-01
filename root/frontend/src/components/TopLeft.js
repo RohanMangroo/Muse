@@ -14,15 +14,14 @@ function TopLeft({
 
   useEffect(() => {
     async function getFeaturedArtists(idOne, idTwo) {
-      const featureOne = await Axios.get(`/api/${idOne}/1`);
-      const featureTwo = await Axios.get(`/api/${idTwo}/1`);
+      const featureOne = await Axios.get(`/api/${idOne}`);
+      const featureTwo = await Axios.get(`/api/${idTwo}`);
 
       setFeatured([featureOne.data[0], featureTwo.data[0]]);
     }
-    getFeaturedArtists(217, 419);
+    getFeaturedArtists(6267, 3228);
   }, []);
 
-  console.log(featured);
   function handleClick(img) {
     updateModal_(true);
     updateCurrentArtistID_(img.artistid);

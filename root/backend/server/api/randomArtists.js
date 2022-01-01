@@ -1,6 +1,6 @@
 const randomArtists = require('express').Router();
-const { produceRandomQuery } = require('../queries');
-const pool = require('../db');
+const { produceRandomQuery } = require('../db/queries');
+const pool = require('../db/index');
 
 randomArtists.get('/randomArtists', async (req, res) => {
   try {

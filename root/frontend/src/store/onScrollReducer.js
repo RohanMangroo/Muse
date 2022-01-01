@@ -11,7 +11,7 @@ export const updatePosition = (newPosition) => {
   };
 };
 
-const initialState = 10;
+const initialState = { start: 0, stop: 10 };
 
 const onScrollReducer = (state = initialState, { type, payload }) => {
   switch (type) {

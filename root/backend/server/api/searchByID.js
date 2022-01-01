@@ -1,6 +1,6 @@
 const searchByID = require('express').Router();
-const { searchByIDLimit, searchByIDLimitNone } = require('../queries');
-const pool = require('../db');
+const { searchByIDLimit, searchByIDLimitNone } = require('../db/queries');
+const pool = require('../db/index');
 
 searchByID.get('/:id/:limit', async (req, res) => {
   const limit = req.params.limit;

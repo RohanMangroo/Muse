@@ -1,7 +1,6 @@
-// SELECT *
-// FROM artworks
-// INNER JOIN artists
-// ON artworks.artist_id = artists.artist.id
+function imageSearch(imageID) {
+  return `SELECT artists.artist_name, artworks.* FROM artworks JOIN artists ON artists.id = artworks.artistid WHERE artworks.id = ${imageID}`;
+}
 
 function searchByIDLimit(id, limit) {
   const query = `SELECT artists.artist_name, artworks.* FROM artworks JOIN artists ON artists.id = artworks.artistid WHERE artists.id = '${id}' LIMIT ${limit}`;
@@ -25,8 +24,18 @@ function produceRandomQuery() {
   return result;
 }
 
+function getArtistList() {
+  return 'SELECT id, artist_name FROM artists ORDER BY id;';
+}
+
 function genRandomNum() {
   return Math.floor(Math.random() * 500) + 1;
 }
 
-module.exports = { produceRandomQuery, searchByIDLimit, searchByIDLimitNone };
+module.exports = {
+  produceRandomQuery,
+  searchByIDLimit,
+  searchByIDLimitNone,
+  getArtistList,
+  imageSearch,
+};

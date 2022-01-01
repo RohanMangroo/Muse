@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Axios from 'axios';
 import { connect } from 'react-redux';
-import { defaultSearch, artistsInDatabase } from '../utils';
+import { defaultSearch } from '../utils';
 import { updateModal } from '../store/modalReducer';
 import { updateCurrentArtistID } from '../store/currentArtistIDReducer';
 import { updateCurrentMainImage } from '../store/currentMainImageReducer';
@@ -83,12 +83,23 @@ export default connect(null, mapDispatchToProps)(Search);
 
 function FilterSearch({ name, setArtist }) {
   const [filter, setFilter] = useState('');
-  const [list, setList] = useState(artistsInDatabase);
+  const [staticList, setStaticList] = useState([]);
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    async function getArtists() {
+      const listOfArtists = await Axios.get('api/artists');
+      setList(listOfArtists.data);
+      setStaticList(listOfArtists.data);
+    }
+
+    getArtists();
+  }, []);
 
   function handleChange(e) {
     setFilter(e.target.value);
     setList(
-      artistsInDatabase.filter((obj) =>
+      staticList.filter((obj) =>
         obj.artist_name.toLowerCase().includes(e.target.value.toLowerCase())
       )
     );
