@@ -20,6 +20,3 @@ app.use('/api', searchByID);
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
-
-// https://trinitytuts.com/fix-samesite-cookie-issue-in-chrome-browser/
-// chrome://flags/
