@@ -2,7 +2,8 @@
   "name": "muse-app",
   "version": "1.0.0",
   "description": "",
-  "main": "muse-app/root/backend/server/index.js",
+  "main": "muse-app",
+  "proxy": "http://localhost:3002",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "react-scripts start",
@@ -24,10 +25,10 @@
   "bugs": {
     "url": "https://github.com/RohanMangroo/Muse/issues"
   },
-  "homepage": "https://github.com/RohanMangroo/Muse#readme",
   "dependencies": {
     "axios": "^0.24.0",
     "express": "^4.17.2",
+    "nodemon": "^2.0.15",
     "pg": "^8.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
