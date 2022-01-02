@@ -19,7 +19,7 @@ function TopLeft({
 
       setFeatured([featureOne.data[0], featureTwo.data[0]]);
     }
-    getFeaturedArtists(6267, 3228);
+    getFeaturedArtists(6060, 3063);
   }, []);
 
   function handleClick(img) {
