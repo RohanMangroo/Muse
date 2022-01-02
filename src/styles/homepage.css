@@ -4,9 +4,10 @@
 
 .main-container {
   height: 1400px;
-  width: 1300px;
+  max-width: 1300px;
   margin: auto;
   gap: 30px;
+  border: solid red;
 }
 
 .position-fixed {

@@ -1,7 +1,8 @@
 .search {
   height: 650px;
-  width: 1300px;
+  width: 100%;
   gap: 20px;
+  border: solid blue;
 }
 
 .search-container {
