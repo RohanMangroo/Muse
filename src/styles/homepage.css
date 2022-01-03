@@ -1,13 +1,19 @@
+.app {
+  margin: auto;
+  width: 1300px;
+}
+
 .homepage {
   margin-top: 10px;
+  width: 100%;
+  margin: auto;
 }
 
 .main-container {
   height: 1400px;
-  max-width: 1300px;
+  width: 100%;
   margin: auto;
   gap: 30px;
-  border: solid red;
 }
 
 .position-fixed {

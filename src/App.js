@@ -16,7 +16,7 @@ function App({ openModal }) {
 
   return (
     <Router>
-      <div ref={appRef}>
+      <div ref={appRef} className="app">
         <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
