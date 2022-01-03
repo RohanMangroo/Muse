@@ -94,6 +94,10 @@
     height: 30%;
   }
 
+  .featured-artist-description h2 {
+    font-size: 1.5rem;
+  }
+
   .random-art header button {
     width: 45px;
   }
@@ -154,6 +158,10 @@
   .list-of-artist-container {
     height: 100%;
   }
+
+  .random-art section div div:nth-child(2) {
+    height: 40%;
+  }
 }
 
 @media only screen and (max-width: 414px) {
@@ -171,5 +179,13 @@
 
   .list-of-artist-container {
     height: 100%;
+  }
+
+  .featured-artist-description h2 {
+    font-size: 0.9rem;
+  }
+
+  .random-art section div div:nth-child(2) {
+    height: 20%;
   }
 }
