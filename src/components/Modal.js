@@ -37,8 +37,8 @@ function Modal({ artistID, updateModal_, updatePosition_, position }) {
   }
 
   return (
-    <div className="model-container center-item">
-      <div className="model flex-row">
+    <div className="modal-container center-item">
+      <div className="modal flex-row">
         <section className="left flex-col">
           <CurrentImage />
           <div className="image-info flex-col"></div>

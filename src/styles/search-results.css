@@ -12,7 +12,7 @@
   grid-column: 1 / 9;
   grid-row: 1 / 6;
   background-color: var(--green-ish);
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
 }
 
