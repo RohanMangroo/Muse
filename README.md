@@ -27,7 +27,7 @@ app.use('/api', searchByID);
 app.use('/api', searchByImageID);
 ```
 
-*getArtists* allows for getting the entire list of artist names so they can be displayed in the search feature
+*getArtists* allows for getting the entire list of artist names so they can be displayed in the search feature.
 The others are exactly as their names describe
 
 There are also 2 featured artists that are hard coded
