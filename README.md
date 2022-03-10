@@ -8,7 +8,7 @@ https://muse-rohan.herokuapp.com/
 
 ## How It Works
 
-## Processing Data
+### Processing Data
 I processed and used mass JSON data from the Chicago Institute of Art's GitHub page to create my own database of selected artists and a         limited amount of their works. Originally the project was supposed to hold over 100,000 works of art but I decided aganist that when I saw       that the free Heroku database has a 10,000 row limit. 
 
 The data is initally bucketed into an object that holds *key/value* pairs where the *key* is the artist name and the *value* is an array of their artworks. 
@@ -19,7 +19,7 @@ That array is then iterated over and each artist is placed in the database with 
 
 There exists 2 tables in the database, *artists* and *artworks*, where each artwork has a foreign key corresponding to an artist.
 
-## Using Data
+### Using Data
 Using the database I created a simple API that allows for the following...
 
 ``` javascript
