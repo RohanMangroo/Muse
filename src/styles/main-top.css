@@ -95,9 +95,15 @@
   width: 100%;
   background-color: rgb(248, 161, 46);
   position: relative;
+  cursor: pointer;
 }
 
-.random-art header button {
+.random-art header:hover {
+  background-color: rgb(248, 96, 46);
+  transition: 500ms;
+}
+
+/* .random-art header button {
   position: absolute;
   height: 100%;
   width: 22px;
@@ -105,7 +111,8 @@
   right: 0;
   background-color: var(--main-color);
   border: none;
-}
+} */
+
 .random-art header button:active {
   /* background-color: var(--main-color--accent); */
   box-shadow: inset 1px 4px 4px rgba(0, 0, 0, 0.4);

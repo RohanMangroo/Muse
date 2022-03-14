@@ -33,9 +33,8 @@ function TopRight() {
   return (
     <section className="top-right flex-col">
       <div className="random-art flex-col">
-        <header className="center-item">
+        <header onClick={() => handleClick()} className="center-item">
           <h2>Random Art</h2>
-          <button onClick={() => handleClick()}></button>
         </header>
         <section>
           <RandomImages images={result} />
