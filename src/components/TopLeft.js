@@ -30,6 +30,7 @@ function TopLeft({
 
   const displayOne = featured.length ? featured[0].artist_name : '';
   const displayTwo = featured.length ? featured[1].artist_name : '';
+
   const imageOne = featured.length
     ? `https://www.artic.edu/iiif/2/${featured[0].imageid}/full/400,/0/default.jpg`
     : '';
@@ -41,7 +42,7 @@ function TopLeft({
     <section className="top-left flex-col">
       <div className="featured-artist-container flex-col">
         <header className="center-item">
-          <h2>Featured Artists</h2>
+          <h2 data-testid="header">Featured Artists</h2>
         </header>
         <div className="sub-container flex-row">
           <div

@@ -4,8 +4,9 @@ const randomArtists = require('./api/randomArtists');
 const searchByID = require('./api/searchByID');
 const getArtists = require('./api/getArtists');
 const searchByImageID = require('./api/searchByImageID');
+const cors = require('cors');
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
@@ -18,7 +19,7 @@ app.use('/api', searchByID);
 app.use('/api', searchByImageID);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../', 'build/index.html'));
+  res.send('Page not found').status(404);
 });
 
 app.listen(PORT, () => {

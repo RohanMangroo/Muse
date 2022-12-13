@@ -4,7 +4,7 @@
   "description": "",
   "main": "muse-app",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "react-scripts test",
     "start": "react-scripts start",
     "build": "react-scripts build"
   },
@@ -25,6 +25,9 @@
     "url": "https://github.com/RohanMangroo/Muse/issues"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
     "express": "^4.17.2",
     "nodemon": "^2.0.15",
@@ -37,6 +40,7 @@
     "simplebar-react": "^2.3.6",
     "uuid": "^8.3.2"
   },
+  "proxy": "http://localhost:3000",
   "browserslist": {
     "production": [
       ">0.2%",

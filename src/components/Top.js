@@ -19,6 +19,7 @@ function TopRight() {
   useEffect(() => {
     async function fetchData() {
       const images = await Axios.get('/api/randomArtists');
+
       setResult(images.data);
     }
 
